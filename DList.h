@@ -3,7 +3,7 @@ namespace RPG {
 		\sa RPG::DListPtr
 		\sa RPG::Catalog
 	*/
-	template <class T = void *>
+	template <class T>
 	class DList {
 		public:
 			void **vTable;
@@ -29,7 +29,7 @@ namespace RPG {
 		<tt>sizeof(DList\<T\> *)</tt>.
 		\sa RPG::DList
 	*/
-	template <class T = void *>
+	template <class T>
 	class DListPtr {
 		public:
 			DList<T> *list; //!< Actual RPG::DList pointer

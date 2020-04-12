@@ -10,7 +10,7 @@ namespace RPG {
 		\sa RPG::NamedCatalogPtr
 		\sa RPG::DList
 	*/
-	template <class T = void *>
+	template <class T>
 	class Catalog {
 		public:
 			void **vTable;
@@ -44,7 +44,7 @@ namespace RPG {
 		\sa RPG::Catalog
 		\sa RPG::NamedCatalogPtr
 	*/
-	template <class T = void *>
+	template <class T>
 	class CatalogPtr {
 		public:
 			Catalog<T> *ptr; //!< Pointer to the actual RPG::Catalog
@@ -80,7 +80,7 @@ for(int i = 0; i < myCatalog.count(); i++) {
 		\sa RPG::Catalog
 		\sa RPG::NamedCatalogPtr
 	*/
-	template <class T = void *>
+	template <class T>
 	class NamedCatalog : public Catalog<T> {
 		public:
 			//! Array access operator
@@ -107,7 +107,7 @@ for(int i = 0; i < myCatalog.count(); i++) {
 		<tt>sizeof(NamedCatalog\<T\> *)</tt>.
 		\sa RPG::NamedCatalog
 	*/
-	template <class T = void *>
+	template <class T>
 	class NamedCatalogPtr {
 		public:
 			NamedCatalog<T> *ptr;

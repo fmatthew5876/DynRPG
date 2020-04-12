@@ -149,7 +149,7 @@ namespace RPG {
 			EventCommand command; //!< The command type
 			int treeDepth; //!< The level of indention (\c 0 for none)
 			DStringPtr stringParameter; //!< The string parameter
-			DArray<int> parameters; //!< The integer parameters
+			DArray<int,0,0> parameters; //!< The integer parameters
 			
 			/*! \brief Returns an integer parameter (\c 0 if the parameter doesn't exist)
 				\param index Parameter index (zero-based)

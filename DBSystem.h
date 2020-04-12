@@ -120,7 +120,7 @@ namespace RPG {
 				int _unknown_A4;
 				int _unknown_A8;
 			// System 2 Tab
-			DArray<MenuCommand_T> menuCommand; //!< Array of Menu Commands, set to the index of the menu item (see RPG::MenuCommand)
+			DArray<MenuCommand_T,0,0> menuCommand; //!< Array of Menu Commands, set to the index of the menu item (see RPG::MenuCommand)
 				//int _unknown_B0;
 				//int _unknown_B4;
 			DStringPtr system2GraphicFilename; //!< Default filename of the system2 graphic

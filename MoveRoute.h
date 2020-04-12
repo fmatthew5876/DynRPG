@@ -90,7 +90,7 @@ namespace RPG {
 		public:
 			void **vTable;
 			DListPtr<MoveRouteItem *> moves; //!< List of movement commands (internal storage, not yet implemented)
-			DArray<char> encodedMoves; //!< Encoded movement command list (see RPG::Character::move)
+			DArray<char,0,0> encodedMoves; //!< Encoded movement command list (see RPG::Character::move)
 			bool repeatPattern; //!< \c true if the movement should be repeated until RPG::Character::stop (or "Halt all movement") is called
 			bool ignoreImpossible; //!< \c true if impossible movement commands should be skipped
 	};

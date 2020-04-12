@@ -24,11 +24,11 @@ namespace RPG {
 				however, you can also use this DArray to retrieve the party's size (RPG::inventory->party.size)
 
 			*/
-			DArray<short > party;
+			DArray<short,0, 0 > party;
 			//int partySize; // alternative to DArray
 			//unsigned short *party; // alternative to DArray
 
-			DArray<short > items; //!< Items in the inventory. Index is zero-based.
+			DArray<short, 0, 0 > items; //!< Items in the inventory. Index is zero-based.
 			//int partySize; // alternative to DArray
 			//unsigned short *id; // alternative to DArray
 			/*! \brief Amount of each item in the inventory.

@@ -136,14 +136,14 @@ namespace RPG {
 			bool useInBattle;  //!< Activation in battle? \sa RPG::ITEM_SWITCH
 
 			// All/Misc
-			DArray<bool> usableByHero; //!< Usable By Hero Array
-			DArray<bool> conditions; //!< Array of Conditions. size = highest condition that is checked off
-			DArray<bool> attributes; //!< Array of Attributes. size = highest attribute that is checked off
+			DArray<bool,0,0> usableByHero; //!< Usable By Hero Array
+			DArray<bool,0,0> conditions; //!< Array of Conditions. size = highest condition that is checked off
+			DArray<bool,0,0> attributes; //!< Array of Attributes. size = highest attribute that is checked off
 			int conditionPercentage; //!< Inflict/Resist Condition %
 				int _unknown_01;
 			NamedCatalogPtr<AnimationWeapon *> weaponAnims; //!< Pointer to the RPG::AnimationWeapon array
 			bool invokeSkill; //!< Does the item invoke a skill (set skill with skillId)
-			DArray<bool> usableByClass; //!< Usable By Class Array
+			DArray<bool,0,0> usableByClass; //!< Usable By Class Array
 			bool isCursed; //!< Is the item cursed?
 			
 			// Note: conditionFlag is a DWORD, so this can't be defined as bool

@@ -77,8 +77,8 @@ namespace RPG {
 			bool affectAgl; //!< Affects agility? \sa RPG::SKILL_NORMAL
 			bool absorb; //!< Absorbs? \sa RPG::SKILL_NORMAL
 			bool ignoreDef; //!< Ignores defense? \sa RPG::SKILL_NORMAL
-			DArray<bool> conditions; //!< Array of conditions. size = highest condition that is checked off \sa RPG::SKILL_NORMAL
-			DArray<bool> attributes; //!< Array of attributes. size = highest attribute that is checked off \sa RPG::SKILL_NORMAL
+			DArray<bool,0,0> conditions; //!< Array of conditions. size = highest condition that is checked off \sa RPG::SKILL_NORMAL
+			DArray<bool,0,0> attributes; //!< Array of attributes. size = highest attribute that is checked off \sa RPG::SKILL_NORMAL
 			bool attributeResist; //!< Attribute increase/decrease resistance flag \sa RPG::SKILL_NORMAL
 			bool isMpPercent; //!< Does the skill cost a % of MP? \sa RPG::SKILL_NORMAL
 			int mpCostPercent; //!< MP % cost \sa RPG::SKILL_NORMAL

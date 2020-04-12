@@ -129,8 +129,8 @@ namespace RPG {
 			bool systemTiled; //!< Is the window background tiled?
 			SystemFont systemFont; //!< Current system font
 			SystemGraphic *systemGraphic; //!< Current system and system2 graphic
-			DArray<bool, 1> switches; //!< %Switches (see also RPG::Switches!)
-			DArray<int, 1> variables; //!< %Variables (see also RPG::Variables!)
+			DArray<bool, 1,0> switches; //!< %Switches (see also RPG::Switches!)
+			DArray<int, 1,0> variables; //!< %Variables (see also RPG::Variables!)
 			bool messageTransparent; //!< Is the message background invisible? (see also RPG::BattleSettings::transparentWindows)
 			MessagePosition messagePosition; //!< Position of the message
 			bool messageAutoPos; //!< Prevent hero from being overlapped by a message?

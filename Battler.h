@@ -56,7 +56,7 @@ namespace RPG {
 			int agilityDiff; //!< Difference from the default agility value
 			/*! \brief Array for a battler's attributes
 			*/
-			DArray<short, 1> attributes; // _unknown_2C - 0|1|2 = -1|+0|+1?
+			DArray<short, 1, 0> attributes; // _unknown_2C - 0|1|2 = -1|+0|+1?
 			/*! \brief Turns elapsed in a certain condition (see details)
 
 				This is an array which has as much possible members as there
@@ -81,7 +81,7 @@ namespace RPG {
 if(battler->animationId == 9) battler->animationId = 0;
 				\endcode
 			*/
-			DArray<short, 1> conditions;
+			DArray<short, 1,0> conditions;
 			int battle_order_2k; // Computed from AGI and used in 2k battle to determine the order which battlers go.
 			bool isCharging; //!< Is the battler (monster) currently using the "Charge Up" action
 #if RPG_RT_ENGINE == 2003

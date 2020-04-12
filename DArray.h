@@ -2,7 +2,7 @@ namespace RPG {
 	/*! Array class
 		\param resizeValue When a DArray is resized larger than its current size, this is the value to assign to the new items. Currently used only for DBActor::conditions, DBActor::attributes, DBClass::conditions, DBClass::attributes, DBMonster::conditions & DBMonster::attributes
 	*/
-	template <class T = void *, int base_ = 0, int resizeValue = 0>
+	template <class T, int base_, int resizeValue>
 	class DArray {
 		public:
 			int size; //!< Size of the array

@@ -21,7 +21,7 @@ namespace RPG {
 			int id; //!< ID of the monster group
 			DStringPtr name; //!< Name of the monster group
 			CatalogPtr<MonsterGroupPosition *> monsterList; //!< The current monsters in the grouping, along with their position
-			DArray<bool, 1> habitatTerrain; //!< The array of "Habitats" for this monster group
+			DArray<bool, 1,0> habitatTerrain; //!< The array of "Habitats" for this monster group
 			CatalogPtr<BattleEventPage *> battleEventPages; //!< The battle event pages associated to this monster group
 			bool randomizeHidden; //!< 50% chance for hidden flag
 			MonsterAlignment alignment;

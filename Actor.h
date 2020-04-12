@@ -38,7 +38,7 @@ namespace RPG {
 			int intelligenceDiff; //!< Difference from the default intelligence value
 			int agilityDiff; //!< Difference from the default agility value
 				//int skillAmount;
-			DArray<short> learnedSkills;
+			DArray<short,0,0> learnedSkills;
 			short weaponId; //!< Database ID of the current weapon (zero for none)
 			short shieldId; //!< Database ID of the current shield (or second-hand weapon, zero for none)
 			short armorId; //!< Database ID of the current armor (zero for none)
@@ -101,7 +101,7 @@ namespace RPG {
 			int comboUsedBattleCommand; //!< The battle command ID that was used (for use in "Enable Combo")
 			int comboBattleCommand; //!< The battle command ID that is expected (set in "Enable Combo")
 			int comboRepetitions; //!< Number of times to repeat combo (set in "Enable Combo")
-			DArray<short > itemsInBattle; //!< Items in the inventory only updated when accessing Item menu in battle. Index is zero-based. (See RPG::Inventory::items)
+			DArray<short,0,0 > itemsInBattle; //!< Items in the inventory only updated when accessing Item menu in battle. Index is zero-based. (See RPG::Inventory::items)
 			unsigned char *itemAmountInBattle; //!< Item amounts in the inventory only updated when accessing Item menu in battle. Index is zero-based. (See RPG::Inventory::items)
 			bool isAutoBattle; //!< Is auto-battle enabled? ( \sa RPG::BattleData::autoBattle )
 				int _unknown_34C;
