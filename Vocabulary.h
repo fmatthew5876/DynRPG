@@ -125,6 +125,99 @@ std::string victoryMessage = RPG::vocabulary[3]
 		
 			87:  "Miss" Message
 	*/
-	static RPG::DStringPtr *&vocabulary = (**reinterpret_cast<RPG::DStringPtr ***>(0x4CDCB4));
+	struct Vocabulary {
+#if RPG_RT_ENGINE == 2000
+		RPG::DStringPtr _unknown_vocab0;
+		RPG::DStringPtr battleMonsterAppear;
+		RPG::DStringPtr battleInitiative;
+		RPG::DStringPtr battleEscapeSuccess;
+		RPG::DStringPtr battleEscapeFailure;
+		RPG::DStringPtr battleVictory;
+		RPG::DStringPtr battleDefeat;
+		RPG::DStringPtr battleExpGain;
+		RPG::DStringPtr battleMoneyGain;
+		RPG::DStringPtr battleMoneyGain2;
+		RPG::DStringPtr battleItemGain;
+		RPG::DStringPtr battleActionAttack;
+		RPG::DStringPtr battleCriticalHitFromHero;
+		RPG::DStringPtr battleCriticalHitFromMonster;
+		RPG::DStringPtr battleActionDefends;
+		RPG::DStringPtr battleActionWaiting;
+		RPG::DStringPtr battleActionCharging;
+		RPG::DStringPtr battleActionSelfDestruct;
+		RPG::DStringPtr battleActionEscape;
+		RPG::DStringPtr battleActionTransformed;
+		RPG::DStringPtr battleDamageOnMonster;
+		RPG::DStringPtr battleNoDamageOnMonster;
+		RPG::DStringPtr battleDamageOnHero;
+		RPG::DStringPtr battleNoDamageOnHero;
+		RPG::DStringPtr battleSkillFailA;
+		RPG::DStringPtr battleSkillFailB;
+		RPG::DStringPtr battleSkillFailC;
+		RPG::DStringPtr battlePhysicalMiss;
+		RPG::DStringPtr battleItemUsed;
+		RPG::DStringPtr battleRecovered;
+		RPG::DStringPtr battleStatRaised;
+		RPG::DStringPtr battleStatDropped;
+		RPG::DStringPtr battleAbsorbedOnMonster;
+		RPG::DStringPtr battleAbsorbedOnEnemy;
+		RPG::DStringPtr battleAttributeUp;
+		RPG::DStringPtr battleAttributeDown;
+		RPG::DStringPtr battleLevelUp;
+		RPG::DStringPtr battleSkillLearned;
+		RPG::DStringPtr _unknown_vocab36;
+		RPG::DStringPtr _unknown_vocab37;
+		RPG::DStringPtr _unknown_vocab38;
+		RPG::DStringPtr _unknown_vocab39;
+		RPG::DStringPtr _unknown_vocab40;
+		RPG::DStringPtr itemsPossessed;
+		RPG::DStringPtr itemEquipped;
+		RPG::DStringPtr currency;
+		RPG::DStringPtr battleCmdFight;
+		RPG::DStringPtr battleCmdAutoBattle;
+		RPG::DStringPtr battleCmdEscape;
+		RPG::DStringPtr optionAttack;
+		RPG::DStringPtr optionDefend;
+		RPG::DStringPtr optionItem;
+		RPG::DStringPtr optionSkill;
+		RPG::DStringPtr optionEquipment;
+		RPG::DStringPtr optionSave;
+		RPG::DStringPtr optionQuit;
+		RPG::DStringPtr statLevel;
+		RPG::DStringPtr statHP;
+		RPG::DStringPtr statMP;
+		RPG::DStringPtr statNormalStatus;
+		RPG::DStringPtr statExp;
+		RPG::DStringPtr statLevelShort;
+		RPG::DStringPtr statHPShort;
+		RPG::DStringPtr statMPShort;
+		RPG::DStringPtr statMPCost;
+		RPG::DStringPtr statAtk;
+		RPG::DStringPtr statDef;
+		RPG::DStringPtr statInt;
+		RPG::DStringPtr statAgi;
+		RPG::DStringPtr equipWeapon;
+		RPG::DStringPtr equipShield;
+		RPG::DStringPtr equipArmor;
+		RPG::DStringPtr equipHelmet;
+		RPG::DStringPtr equipAccessory;
+		RPG::DStringPtr chooseSaveSlot;
+		RPG::DStringPtr chooseLoadSlot;
+		RPG::DStringPtr confirmQuit;
+		RPG::DStringPtr saveFile;
+		RPG::DStringPtr yes;
+		RPG::DStringPtr no;
+		RPG::DStringPtr optionStatus;
+		RPG::DStringPtr optionOrder;
+		RPG::DStringPtr optionRow;
+		RPG::DStringPtr optionWaitOn;
+		RPG::DStringPtr optionWaitOff;
+		RPG::DStringPtr _unknown_vocab86;
+		RPG::DStringPtr battleMiss;
+#endif
+		RPG::DStringPtr* messages;
+	};
+
+	static RPG::Vocabulary *vocabulary = (**reinterpret_cast<RPG::Vocabulary **>(0x4CDCB4));
 	
 }
