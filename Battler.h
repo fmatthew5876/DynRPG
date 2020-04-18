@@ -25,6 +25,23 @@ namespace RPG {
 		AT_LONG_ITEM
 	};
 
+	struct BattlerVTable {
+		void (*GetBaseAtk)();
+		void (*GetBaseDef)();
+		void (*GetBaseInt)();
+		void (*GetBaseAgi)();
+		void (*_unknown_v4)();
+		void (*_unknown_v5)();
+		void (*_unknown_v6)();
+		void (*_unknown_v7)();
+		void (*_unknown_v8)();
+		void (*_unknown_v9)();
+#if RPG_RT_ENGINE == 2000
+		void (*GetMaxHp)();
+		void (*GetMaxMp)();
+#endif
+	};
+
 	/*! \brief Used for entities participating in battle, i.e. actors and
 		monsters
 
@@ -37,7 +54,7 @@ namespace RPG {
 	*/
 	class Battler { // TLcfgUnitItem
 		public:
-			void **vTable;
+			BattlerVTable *vTable;
 			/*! \brief One-based ID of the battler
 
 				For actors this value is the database ID, for monsters it is the party member ID <b>plus one</b> (e.g. <tt>RPG::monsters[3]->id</tt> should always be \c 4).
