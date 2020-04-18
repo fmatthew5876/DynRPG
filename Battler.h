@@ -25,21 +25,45 @@ namespace RPG {
 		AT_LONG_ITEM
 	};
 
+	class Battler;
+
 	struct BattlerVTable {
-		void (*GetBaseAtk)();
-		void (*GetBaseDef)();
-		void (*GetBaseInt)();
-		void (*GetBaseAgi)();
-		void (*_unknown_v4)();
-		void (*_unknown_v5)();
-		void (*_unknown_v6)();
-		void (*_unknown_v7)();
-		void (*_unknown_v8)();
-		void (*_unknown_v9)();
-#if RPG_RT_ENGINE == 2000
-		void (*GetMaxHp)();
-		void (*GetMaxMp)();
-#endif
+		int (*GetBaseAtk)(Battler*);
+		int (*GetBaseDef)(Battler*);
+		int (*GetBaseInt)(Battler*);
+		int (*GetBaseAgi)(Battler*);
+		void (*_unknown_v4)(Battler*);
+		void (*_unknown_v5)(Battler*);
+		void (*_unknown_v6)(Battler*);
+		void (*_unknown_v7)(Battler*);
+		void (*_unknown_v8)(Battler*);
+		void (*GetBattlerName)(Battler*);
+		int (*GetMaxHp)(Battler*);
+		int (*GetMaxMp)(Battler*);
+		void (*_unknown_v12)(Battler*);
+		void (*_unknown_v13)(Battler*);
+		void (*_unknown_v14)(Battler*);
+		void (*_unknown_v15)(Battler*);
+		void (*_unknown_v16)(Battler*);
+		void (*_unknown_v17)(Battler*);
+		void (*AttackHasAttribute)(Battler*, int);
+		void (*_unknown_v19)(Battler*);
+		void (*_unknown_v20)(Battler*);
+		double (*GetCriticalHitRate)(Battler*);
+		int (*GetHitRate)(Battler*);
+		void (*HasStrongDefense)(Battler*);
+		void (*_unknown_v24)(Battler*);
+		void (*AttacksTwice)(Battler*);
+		void (*_unknown_v26)(Battler*);
+		int (*HasAttacksIgnoresEvasion)(Battler*);
+		void (*IgnoresCriticalHits)(Battler*);
+		int (*HasPhysicalEvasionUp)(Battler*);
+		int (*_unknown_v30)(Battler*);
+		int (*_unknown_v31)(Battler*);
+		int (*_unknown_v32)(Battler*);
+		int (*IsInSameParty)(Battler*, Battler*); //<! Used to check if target of attack is in same party and if so, disallow critical hits.
+		int (*GetCriticalHitMessageType)(Battler*); //<! 0 - Monster, 1 - Actor
+		int (*GetHurtMessageType)(Battler*);
 	};
 
 	/*! \brief Used for entities participating in battle, i.e. actors and
