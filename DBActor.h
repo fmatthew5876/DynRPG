@@ -55,12 +55,21 @@ namespace RPG {
 			bool lockEquipment; //!< Is the equipment locked?
 			bool mightyGuard; //!< Does defending reduce the damage more than usual?
 #pragma pack(push, 2)
+#if RPG_RT_ENGINE == 2000
+			ArrayBaseOne<short, 50> maxHp; //!< Array of maximum HP values for each level
+			ArrayBaseOne<short, 50> maxMp; //!< Array of maximum MP values for each level
+			ArrayBaseOne<short, 50> attack; //!< Array of attack values for each level
+			ArrayBaseOne<short, 50> defense; //!< Array of defense values for each level
+			ArrayBaseOne<short, 50> intelligence; //!< Array of intelligence values for each level
+			ArrayBaseOne<short, 50> agility; //!< Array of agility values for each level
+#else
 			ArrayBaseOne<short, 99> maxHp; //!< Array of maximum HP values for each level
 			ArrayBaseOne<short, 99> maxMp; //!< Array of maximum MP values for each level
 			ArrayBaseOne<short, 99> attack; //!< Array of attack values for each level
 			ArrayBaseOne<short, 99> defense; //!< Array of defense values for each level
 			ArrayBaseOne<short, 99> intelligence; //!< Array of intelligence values for each level
 			ArrayBaseOne<short, 99> agility; //!< Array of agility values for each level
+#endif
 #pragma pack(pop)
 			int expPrimary; //!< Primary experience curve parameter
 			int expSecondary; //!< Secondary experience curve parameter
@@ -72,9 +81,9 @@ namespace RPG {
 			short accessoryId; //!< Default accessory ID
 			int unarmedBattleAnimationId; //!< Battle animation ID for attacks without weapon
 			CatalogPtr<SkillProgression *> skillLearning; //!< Skill learning data
-				int _unknown_4FC;
-				int _unknown_500;
-				
+			bool hasCustomSkillName; //!< true if the actor has a unique command name.
+			DStringPtr customSkillName; //<! The name for the actor's custom command
+
 			/*! \brief Condition Resistance Array (See RPG::DamageMultiplier)
 				
 				If at a certain point, the resistance of a condition and all conditions higher than it are C, the conditions.size will equal the number of the highest non-C condition. 
