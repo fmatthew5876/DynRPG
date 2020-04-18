@@ -22,6 +22,14 @@ namespace RPG {
 			int blinkTimer; //!< Internal timer for when a monster is flashing
 			int deathTimer; //!< Internal timer for when a monster is dying
 			int explodeTimer; //!< Internal timer for when a monster is... exploding?? (wat)
+			int _unknown_F0;
+			int _unknown_F4;
+			int _unknown_F8;
+			int _unknown_FC;
+			int _unknown_100;
+			int damageTimer2k; //<! Internal timer for when a monster is animating damaged
+			int _unknown_104;
+			int explodeTimer2k;
 			
 			/*! \brief Returns the battle animation information for when an animation
 				is playing over a monster (being attacked or healed)
