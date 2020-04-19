@@ -31,6 +31,10 @@ namespace RPG {
 		SYSF_MSMINCHO //!< Second font (normally MS Mincho)
 	};
 	
+	enum ItemUsability {
+		ITMU_HERO, //!< Item usability corresponds to hero id
+		ITMU_CLASS //!< Item usability corresponds to class id
+	};
 	//! One-byte version of RPG::Transition
 	typedef unsigned char Transition_T;
 	
@@ -72,16 +76,15 @@ namespace RPG {
 		public:
 			void **vTable;
 			DStringPtr boatFilename; //!< Filename of the boat vehicle
-				DStringPtr _unknown_8;
+			int boatId; //!< Id of the boat in charset
 			DStringPtr shipFilename; //!< Filename of the ship vehicle
-				DStringPtr _unknown_10;
+			int shipId; //!< Id of the ship in charset
 			DStringPtr airshipFilename; //!< Filename of the airship vehicle
-				DStringPtr _unknown_18;
+			int airshipId; //!< Id of the airship in charset
 			DStringPtr titleFilename; //!< Filename of the title screen
 			DStringPtr gameOverFilename; //!< Filename of the game over screen
 			DStringPtr systemGraphicFilename; //!< Default filename of the system graphic
-				int _unknown_28;
-				int _unknown_2C;
+			DArray<short,0,0> startingParty; //!< The starting party on a new game.
 			Music *titleBGM; //!< Default title screen music
 			Music *battleBGM; //!< Default battle music
 			Music *victoryBGM; //!< Default victory music
@@ -108,17 +111,16 @@ namespace RPG {
 			Transition_T battleStartShowTrans; //!< Default screen showing transition on battle start (see RPG::Transition)
 			Transition_T battleEndEraseTrans; //!< Default screen erasing transition on battle end (see RPG::Transition)
 			Transition_T battleEndShowTrans; //!< Default screen showing transition on battle end (see RPG::Translation)
-			bool systemTiled; //!< Is the window background tiled? (Default value)
+			int systemTiled; //!< Is the window background tiled? (Default value)
 			SystemFont systemFont; //!< Default system font
-				int _unknown_90;
-				int _unknown_94; 
-				DStringPtr _unknown_98;
+			int selectedCondition; //!< Selected condition in the editor.
+			int selectedHero; //!< Selected hero in the editor.
+			DStringPtr battleTestBackground;
 			//! \cond
 			TestPlayer *testPlayer;
 			//! \endcond
-				int _unknown_A0;
 			int databaseSaveCount; //!< Number of times the database was saved in edtior.
-				int _unknown_A8;
+			int ldbVersion; //!< LDB database version. 2000 or 2003.
 			// System 2 Tab
 			DArray<MenuCommand_T,0,0> menuCommand; //!< Array of Menu Commands, set to the index of the menu item (see RPG::MenuCommand)
 				//int _unknown_B0;
@@ -133,7 +135,11 @@ namespace RPG {
 				bool _unknown_BD;
 				bool _unknown_BE;
 				bool _unknown_BF;
-			bool itemUsableByClass; //!< Makes items usable by class instead of usable by hero. Not so sure though... untested... 
+			ItemUsability itemUsability; //!< Whether hero id or class id dictates item usability.
+			int battleTestFormation; //!< Formation used for battle test
+			int battleTestCondition; //!< Formation used for battle test
+			int battleTestAltTerrain; //!< An editor only terrain setting.
+			int battleTestTerrain; //!< Formation used for battle test
 			
 	};
 	
