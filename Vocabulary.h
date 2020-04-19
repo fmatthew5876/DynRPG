@@ -126,9 +126,11 @@ std::string victoryMessage = RPG::vocabulary[3]
 			87:  "Miss" Message
 	*/
 	struct Vocabulary {
-#if RPG_RT_ENGINE == 2000
-		RPG::DStringPtr _unknown_vocab0;
+#if RPG_RT_ENGINE == 2000 
+		void* _unknown_00;
+#endif
 		RPG::DStringPtr battleMonsterAppear;
+		RPG::DStringPtr battleStart;
 		RPG::DStringPtr battleInitiative;
 		RPG::DStringPtr battleEscapeSuccess;
 		RPG::DStringPtr battleEscapeFailure;
@@ -213,7 +215,9 @@ std::string victoryMessage = RPG::vocabulary[3]
 		RPG::DStringPtr optionWaitOn;
 		RPG::DStringPtr optionWaitOff;
 		RPG::DStringPtr _unknown_vocab86;
-		RPG::DStringPtr battleMiss;
+#ifdef RPG_RT_ENGINE == 2003
+		RPG::DStringPtr battleStart2k3;
+		RPG::DStringPtr battleMiss2k3;
 #endif
 		RPG::DStringPtr* messages;
 	};
