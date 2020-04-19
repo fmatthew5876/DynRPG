@@ -10,9 +10,9 @@ namespace RPG {
 		public:
 			void **vTable;
 			BattleEventScriptData *eventData; //!< Stub. Use RPG::getBattleEventLine(monsterGroup,battleEventPage,lineId) to access battle event data
-			char _unknown_08;
-			char _unknown_09;
-			char _unknown_0A;
+			char showMessage; //!< Whether this event spawned a message box.
+			char abortOnEscape; //!< Flag set if this event started a battle with "abort on escape" options set.
+			char waitForMovement; //!< Set to true if "Wait for all movement" is active
 			bool key_input_wait;
 			int key_input_variable;
 			bool key_input_all_direction;

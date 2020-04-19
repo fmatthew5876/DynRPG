@@ -59,7 +59,7 @@ namespace RPG {
 				//NamedCatalogPtr<EventData *> events;  //!< The original definition. Points the array of map events on the current map (one-based) (again??)
 			MapGraphics *graphics; //!< The Tileset, along with the cached graphics?
 				UnknownPointer *charsetGraphics; //!< Not yet implemented. Wtf even is this?
-				int _unknown_48;
+			int mapSaveCount; //!< Number of times the map was saved in the editor.
 			bool useDungeonGenerator; //!< true if the current map uses the dungeon generator
 			DungeonGenType dGenType; //!< Dungeon generation guidelines (see RPG::DungeonGenType)
 				int _unknown_54;

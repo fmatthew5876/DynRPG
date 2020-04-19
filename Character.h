@@ -147,6 +147,7 @@ namespace RPG {
 			bool eventJumping; //!< Is the event jumping?
 			int beforeJumpX; //!< Map's X value Before jumping
 			int beforeJumpY; //!< Map's Y value Before jumping
+			bool isPaused; //!< Stops the event from moving. Used when talking to events.
 			bool isFlying; //!< Flying flag for airship
 			DStringPtr charsetFilename; //!< Filename of the current charset
 			int charsetId; //!< ID of the current charset
@@ -295,9 +296,9 @@ RPG::hero->move(moves.c_str(), moves.length());
 			EventData *data; //!< Pointer to the RPG::EventData of this event
 			EventPage *currentPage; //!< The currently loaded event page
 			bool isWaiting; //!< Is the event waiting? Set to true to run the event's code, but has some dependency with facing/direction event to hero relationships that affect whether it runs or not.
-				int _unknown_A4;
-				int _unknown_A8;
-				int _unknown_AC; // Pointer to More scriptData? See
+			int originalMoveRouteIndex; //!< Move route index for custom move type.
+			int triggeredByDecisionKey; //!< True if event was started by player talking to it.
+			int _unknown_AC; // Pointer to More scriptData? See
 
 			/*! \brief Checks whether a certain event page exists
 
@@ -369,18 +370,18 @@ RPG::hero->move(moves.c_str(), moves.length());
 			bool isInVehicle; //!< True when the hero has entered a vehicle
 			HeroVehicle vehicle; //!< Tells you whether the hero is in a vehicle at the moment
 			bool isLeavingVehicle; //!< Only true if the hero is dismounting a vehicle
-				int _unknown_A4;
-				bool _unknown_A8;
+			int preboardMoveSpeed; //!< Move speed before party boarded a vehicle
+			bool menuCalling; //!< When true, menu will be summoned next frame
 			bool screenPanUnlocked; //!< Can screen panning be used?
 			int mapOffsetX; // ??
 			int mapOffsetY; // ??
 			int mapHeroOffsetX; //!<  (default = 9*256) ??
 			int mapHeroOffsetY; //!<  (default = 7*256) ??
 			HeroPanTransitionSpeed panTransitionSpeed; //!< Same as Pan Screen Transition Speed^4 (4: Normal would be 16)
-				int _unknown_C0;
-				int _unknown_C4;
-				int _unknown_C8;
-				int _unknown_CC;
+			int encounterSteps; //!< Number of steps taken since last random encounter. Encounter chance increases with each step.
+			bool encounterCalling; //!< When true, random encounter will trigger next frame.
+			int mapSaveCount; //!< Copies save count of current map. If map save count is > than this on load, all map events are reset.
+			int databaseSaveCount; //!< Copies save count of current database.  If db save count is > than this on load, all map events and common events are reset.
 
 			/*! \brief Returns the current hero control mode
 				\note This is a special feature of the DynRPG patch.
@@ -444,7 +445,10 @@ RPG::hero->move(moves.c_str(), moves.length());
 		public:
 			HeroVehicle type; //!< The id of the vehicle
 			int takeOffTimer; //!< Timer for when taking off. 256-0 when rising into the air (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
-			int landingTimer; //!< Timer for landing. 256-0 when rising into the air (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
+			int ascendTimer; //!< Timer for ascending. 256-0 when rising into the air (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
+			int descendTimer; //!< Timer for descending. 256-0 when landing onto the group (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
+			DStringPtr originalSpriteName; //!< Sprite name set by change vehicle graphic
+			int originalSpriteId //!< Sprite id set by change vehicle graphic
 	};
 
 	/*! \ingroup game_objects

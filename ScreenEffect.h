@@ -103,12 +103,13 @@ namespace RPG {
 
 			int _unknown_68; // Always some big number?
 			int _unknown_6C; // Always 0?
-			int _unknown_70; // Always 0?
-			int _unknown_74; // Always 0?
+			int panScreenX; //<! X offset for full screen effects (battle animations, weather) range [0: 320]
+			int panScreenY; //<! Y offset for full screen effects (battle animations, weather) range [0: 160]
 			int animationId; //<! Currently active battle animation id
-			int _unknown_7C; // Always 0?
+			int animationTarget; //<! Target of the currently active battle animation.
 			int animationCurrentFrame; //<! Current animation id frame
-			int animationActive; //<! Whether or not animation is active
+			bool animationActive; //<! Whether or not animation is active
+			bool animationGlobal; //<! Whether or not animation affects whole screen
 			int _unknown_88; //Always 38073260?
 
 			/*! \brief Which weather effect is active

@@ -117,7 +117,7 @@ namespace RPG {
 			TestPlayer *testPlayer;
 			//! \endcond
 				int _unknown_A0;
-				int _unknown_A4;
+			int databaseSaveCount; //!< Number of times the database was saved in edtior.
 				int _unknown_A8;
 			// System 2 Tab
 			DArray<MenuCommand_T,0,0> menuCommand; //!< Array of Menu Commands, set to the index of the menu item (see RPG::MenuCommand)

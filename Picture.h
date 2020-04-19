@@ -71,6 +71,7 @@ namespace RPG {
 			int movementTimer; //!< Number of frames left until movement is completed (zero means not moving)
 				int _unknown_C4;
 			double angle; //!< Current picture angle (\c 256 units equal to 360 degree!)
+			int waver; //!< current picture wave offset
 			
 			//! Draws the content of the bottom buffer onto the top buffer and clears the bottom buffer afterwards
 			void merge();
