@@ -55,7 +55,7 @@ namespace RPG {
 			int verScrollSpeed; //!< If vertical scrolling enabled, this is the defined speed
 			MapLmuFile *currentLmuFile; //!< Lmu file pointer to the current map
 				MapLmuFile *_unknown_LmuFile; //!< Lmu file pointer to ???
-				int _unknown_3C; // Duplicate of map->events[##]->data (data is the same anyway...)
+			NamedCatalogPtr<Event*> events; // Duplicate of map->events[##]->data (data is the same anyway...)
 				//NamedCatalogPtr<EventData *> events;  //!< The original definition. Points the array of map events on the current map (one-based) (again??)
 			MapGraphics *graphics; //!< The Tileset, along with the cached graphics?
 				UnknownPointer *charsetGraphics; //!< Not yet implemented. Wtf even is this?
@@ -86,6 +86,7 @@ namespace RPG {
 			short dGenObstacleATiles[4]; //!< The tile IDs of Obstacle A (Block of 4 upper-layer tiles) (value is 10000 + the tile's ID)
 			short dGenObstacleBTiles[4]; //!< The tile IDs of Obstacle B (Block of 4 upper-layer tiles) (value is 10000 + the tile's ID)
 			short dGenObstacleCTiles[4]; //!< The tile IDs of Obstacle C (Block of 4 upper-layer tiles) (value is 10000 + the tile's ID)
-				short _unknown_A2;
+			int dGenGeneratorX[9];
+			int dGenGeneratorY[9];
 	};
 }
