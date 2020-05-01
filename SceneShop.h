@@ -43,13 +43,8 @@ namespace RPG {
 		\sa RPG::shop
 		\sa RPG::Window
 	*/
-	class SceneShop {
+	class SceneShop : public SceneBase {
 		public:
-			void **vTable;
-				//Image *winTest1; //!< Experimental
-				//Image *winTest2; //!< Experimental
-				AuroraBoard *AuroraBoard1; //!< Not even a little bit implemented...
-				AuroraBoard *AuroraBoard2; //!< Not even a little bit implemented...
 			ShopSubScene_T screen; //!< The RPG::ShopSubScene currently being displayed
 			bool initialized; //!< The flag to repaint the screen
 				bool _unknown_0E;

@@ -58,11 +58,8 @@ namespace RPG {
 		\sa RPG::BattleEncounterCondition
 		\sa RPG::BattleType
 	*/
-	class BattleData {
+	class BattleData : public SceneBase {
 		public:
-			void **vTable;
-				int _unknown_04;
-				int _unknown_08;
 			int monsterGroupId; //!< ID of the monster group
 			DStringPtr backdropFilename; //!< The filename of the backdrop
 			bool escapeAllowed; //!< Is escaping allowed?

@@ -3,11 +3,8 @@ namespace RPG {
 	/*! \brief The Map scene.
 		\sa RPG::sceneMap
 	*/
-	class SceneMap {
+	class SceneMap : public SceneBase {
 		public:
-			void **vTable;
-			AuroraBoard *AuroraBoard1; //!< Not even a little bit implemented...
-			AuroraBoard *AuroraBoard2; //!< Not even a little bit implemented...
 			bool initialized; //!< Has the map scene been initialized?
 	};
 

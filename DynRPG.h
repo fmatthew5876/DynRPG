@@ -90,6 +90,7 @@ namespace RPG {
     #include "Teleport.h"
     #include "Panorama.h"
     #include "Window.h"
+    #include "Scene.h"
     #include "BattleCommand.h"
 #include "BattleSettings.h" // Updated
     #include "BattleData.h"

@@ -15,11 +15,8 @@ namespace RPG {
 	/*! \brief The Save/Load scene.
 		\sa RPG::saveLoad
 	*/
-	class SceneFile {
+	class SceneFile : public SceneBase {
 		public:
-			void **vTable;
-				AuroraBoard *AuroraBoard1; //!< Not even a little bit implemented...
-				AuroraBoard *AuroraBoard2; //!< Not even a little bit implemented...
 			bool initialized; //!< Has the enter hero name scene initialized?
 			Window *winInfo; //!< The info window (very top)
 			WindowSaveFile *winFile[15]; //!< The actual file windows

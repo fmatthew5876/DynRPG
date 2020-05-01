@@ -5,11 +5,8 @@ namespace RPG {
 	/*! \brief Access to the title screen parameters. 
 		\sa RPG::title
 	*/
-	class SceneTitle {
+	class SceneTitle : public SceneBase {
 		public:
-			void **vTable;
-				AuroraBoard *AuroraBoard1; //!< Not even a little bit implemented...
-				AuroraBoard *AuroraBoard2; //!< Not even a little bit implemented...
 			bool initialized; //!< Has the title screen initialized?
 			bool isLoadNotDefault; //!< Set to false to make Load the default option;
 			bool saveFilesPresent; //!< Are save files present (controls whether load can be selected). Determined DURING drawing of the title screen.

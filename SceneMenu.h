@@ -28,11 +28,8 @@ namespace RPG {
 		\sa RPG::menu
 		\sa RPG::Window
 	*/
-	class SceneMenu {
+	class SceneMenu : public SceneBase {
 		public:
-			void **vTable;
-				int _unknown_04;
-				int _unknown_08;
 			MenuSubScreen_T screen; //!< The RPG::MenuSubScreen currently being displayed (replaces getMenuScreen() function from the days of yore)
 			bool repaint; //!< The flag to repaint the screen
 				bool _unknown_0E;
