@@ -7,6 +7,9 @@ namespace RPG {
 	class Monster : public Battler { // TLcfgMonsterItem
 		public:
 			// sizeof(Battler) == 0xD8
+#if RPG_RT_ENGINE == 2000
+			int _unknown_0xDB;
+#endif
 			int databaseId; //!< The database ID of the monster
 			Image *image; //!< The image of the monster's graphic
 			Image *imageMirrored; //!< The <b>mirrored</b> image of the monster's graphic (used when \ref RPG::Battler::mirrored is \c true)
@@ -22,22 +25,14 @@ namespace RPG {
 			int blinkTimer; //!< Internal timer for when a monster is flashing
 			int deathTimer; //!< Internal timer for when a monster is dying
 			int explodeTimer; //!< Internal timer for when a monster is... exploding?? (wat)
-			int _unknown_F0;
-			int _unknown_F4;
-			int _unknown_F8;
-			int _unknown_FC;
-			int _unknown_100;
-			int damageTimer2k; //<! Internal timer for when a monster is animating damaged
-			int _unknown_104;
-			int explodeTimer2k;
-			
+
 			/*! \brief Returns the battle animation information for when an animation
 				is playing over a monster (being attacked or healed)
 				\return Pointer to the AnimationInBattle class for the monster party
 				\sa RPG::Actor::animData
 			*/
 			static RPG::AnimationInBattle *&animData;
-			
+
 			/*! \brief Built-in RM2k3 function that transforms an enemy into a new monster (ATB unaltered)
 				\param id The database ID of the monster to transform into
 			*/

@@ -126,9 +126,6 @@ std::string victoryMessage = RPG::vocabulary[3]
 			87:  "Miss" Message
 	*/
 	struct Vocabulary {
-#if RPG_RT_ENGINE == 2000 
-		void* _unknown_00;
-#endif
 		RPG::DStringPtr battleMonsterAppear;
 		RPG::DStringPtr battleStart;
 		RPG::DStringPtr battleInitiative;
@@ -158,11 +155,11 @@ std::string victoryMessage = RPG::vocabulary[3]
 		RPG::DStringPtr battleSkillFailC;
 		RPG::DStringPtr battlePhysicalMiss;
 		RPG::DStringPtr battleItemUsed;
-		RPG::DStringPtr battleRecovered;
+		RPG::DStringPtr battleHpMpRecovered;
 		RPG::DStringPtr battleStatRaised;
 		RPG::DStringPtr battleStatDropped;
+		RPG::DStringPtr battleAbsorbedOnHero;
 		RPG::DStringPtr battleAbsorbedOnMonster;
-		RPG::DStringPtr battleAbsorbedOnEnemy;
 		RPG::DStringPtr battleAttributeUp;
 		RPG::DStringPtr battleAttributeDown;
 		RPG::DStringPtr battleLevelUp;
@@ -175,6 +172,9 @@ std::string victoryMessage = RPG::vocabulary[3]
 		RPG::DStringPtr itemsPossessed;
 		RPG::DStringPtr itemEquipped;
 		RPG::DStringPtr currency;
+		RPG::DStringPtr _unknown_vocab41;
+		RPG::DStringPtr _unknown_vocab42;
+		RPG::DStringPtr _unknown_vocab43;
 		RPG::DStringPtr battleCmdFight;
 		RPG::DStringPtr battleCmdAutoBattle;
 		RPG::DStringPtr battleCmdEscape;
@@ -215,13 +215,12 @@ std::string victoryMessage = RPG::vocabulary[3]
 		RPG::DStringPtr optionWaitOn;
 		RPG::DStringPtr optionWaitOff;
 		RPG::DStringPtr _unknown_vocab86;
-#ifdef RPG_RT_ENGINE == 2003
+#if RPG_RT_ENGINE == 2003
 		RPG::DStringPtr battleStart2k3;
 		RPG::DStringPtr battleMiss2k3;
 #endif
 		RPG::DStringPtr* messages;
 	};
 
-	static RPG::Vocabulary *vocabulary = (**reinterpret_cast<RPG::Vocabulary **>(0x4CDCB4));
-	
+	static RPG::Vocabulary *vocabulary = (**reinterpret_cast<RPG::Vocabulary ***>(0x4CDCB4));
 }

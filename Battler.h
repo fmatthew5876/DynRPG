@@ -91,7 +91,7 @@ namespace RPG {
 		double (*GetCriticalHitRate)(Battler*);
 		int (*GetHitRate)(Battler*);
 		int (*HasStrongDefense)(Battler*);
-		int (*_unknown_v25)(Battler*);
+		int (*HasFirstStrike)(Battler*);
 		int (*AttacksTwice)(Battler*);
 		int (*_unknown_v27)(Battler*);
 		int (*HasAttacksIgnoresEvasion)(Battler*);

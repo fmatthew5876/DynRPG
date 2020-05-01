@@ -448,7 +448,7 @@ RPG::hero->move(moves.c_str(), moves.length());
 			int ascendTimer; //!< Timer for ascending. 256-0 when rising into the air (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
 			int descendTimer; //!< Timer for descending. 256-0 when landing onto the group (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
 			DStringPtr originalSpriteName; //!< Sprite name set by change vehicle graphic
-			int originalSpriteId //!< Sprite id set by change vehicle graphic
+			int originalSpriteId; //!< Sprite id set by change vehicle graphic
 	};
 
 	/*! \ingroup game_objects
