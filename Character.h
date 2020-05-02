@@ -156,8 +156,7 @@ namespace RPG {
 			int flashG; //!< The green value for sprite flashing
 			int flashB; //!< The blue value for sprite flashing
 				int _unknown_84; // Strength slider?
-			int flashIntensity; //!< This is not the same as strength/power
-				int _unknown_8C;
+			double flashIntensity; //!< This is not the same as strength/power
 			int flashTimer; //!< The flash timer. Starts at time*6 & decreases each frame
 			// Continues to RPG::Hero
 

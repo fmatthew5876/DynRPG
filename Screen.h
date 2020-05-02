@@ -60,6 +60,10 @@ namespace RPG {
 				int _unknown_BC; 
 			double millisecondsPerFrame; //!< Milliseconds a frame should take
 			int maxFPS; //!< Maximum FPS
+				int _unknown_C8;
+				int _unknown_CC;
+				int _unknown_D0;
+				int _unknown_D4;
 			
 			/*! \brief Returns the HWND of the window control on which the
 				screen is drawn

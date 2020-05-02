@@ -1,4 +1,7 @@
 namespace RPG {
+	class AnimationCurrent;
+	class Character;
+
 	struct WeatherParticle {
 		int t; //!< Particle time left
 		int x; //!< Particle x positon
@@ -101,12 +104,12 @@ namespace RPG {
 			*/
 			void flash(int r, int g, int b, int intensity, int duration);
 
-			int _unknown_68; // Always some big number?
-			int _unknown_6C; // Always 0?
+			AnimationCurrent* animationCurrent; // Pointer to current animation data.
+			Character* animationTarget; // Map event target of the animation.
 			int panScreenX; //<! X offset for full screen effects (battle animations, weather) range [0: 320]
 			int panScreenY; //<! Y offset for full screen effects (battle animations, weather) range [0: 160]
 			int animationId; //<! Currently active battle animation id
-			int animationTarget; //<! Target of the currently active battle animation.
+			int animationTargetId; //<! Target of the currently active battle animation.
 			int animationCurrentFrame; //<! Current animation id frame
 			bool animationActive; //<! Whether or not animation is active
 			bool animationGlobal; //<! Whether or not animation affects whole screen
