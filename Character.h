@@ -364,7 +364,6 @@ RPG::hero->move(moves.c_str(), moves.length());
 	class Hero : public Character {
 		public:
 			// sizeof(Character) == 0x94
-				int _unknown_94;
 			bool isEnteringVehicle; //!< Only true if the hero is entering a vehicle
 			bool isInVehicle; //!< True when the hero has entered a vehicle
 			HeroVehicle vehicle; //!< Tells you whether the hero is in a vehicle at the moment
@@ -372,10 +371,10 @@ RPG::hero->move(moves.c_str(), moves.length());
 			int preboardMoveSpeed; //!< Move speed before party boarded a vehicle
 			bool menuCalling; //!< When true, menu will be summoned next frame
 			bool screenPanUnlocked; //!< Can screen panning be used?
-			int mapOffsetX; // ??
-			int mapOffsetY; // ??
-			int mapHeroOffsetX; //!<  (default = 9*256) ??
-			int mapHeroOffsetY; //!<  (default = 7*256) ??
+			int currentPanOffsetX; //!< Current pan screen X offset
+			int currentPanOffsetY; //!< Current pan screen Y offset
+			int finishPanOffsetX; //!< Final pan screen X offset
+			int finishPanOffsetY; //!< Final pan screen Y offset
 			HeroPanTransitionSpeed panTransitionSpeed; //!< Same as Pan Screen Transition Speed^4 (4: Normal would be 16)
 			int encounterSteps; //!< Number of steps taken since last random encounter. Encounter chance increases with each step.
 			bool encounterCalling; //!< When true, random encounter will trigger next frame.
