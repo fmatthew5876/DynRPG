@@ -1,7 +1,4 @@
 namespace RPG {
-	//! Not implemented yet
-	typedef void Chipset;
-
 	/*! \brief Used for accessing and manipulating the current map environment
 		\sa RPG::map
 	*/

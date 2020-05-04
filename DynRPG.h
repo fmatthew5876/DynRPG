@@ -126,6 +126,7 @@ namespace RPG {
     #include "SceneShop.h"
     #include "Terrain.h"
     #include "Tileset.h"
+	#include "Chipset.h"
     #include "MapEncounter.h"
     #include "MapStartPositions.h"
     #include "MapTreeProperties.h"

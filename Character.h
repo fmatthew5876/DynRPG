@@ -46,6 +46,30 @@ namespace RPG {
 	//! One-byte version of RPG::Layer
 	typedef unsigned char Layer_T;
 
+	struct CharacterVTable {
+		void (*_unknown_v0)(Character*);
+		void (*_unknown_v1)(Character*);
+		void (*_unknown_v2)(Character*);
+		void (*_unknown_v3)(Character*);
+		void (*_unknown_v4)(Character*);
+		void (*_unknown_v5)(Character*);
+		void (*_unknown_v6)(Character*);
+		void (*_unknown_v7)(Character*);
+		void (*_unknown_v8)(Character*);
+		void (*_unknown_v8)(Character*);
+		void (*_unknown_v9)(Character*);
+		void (*_unknown_v10)(Character*);
+		void (*ExecuteJump)(Character*);
+		void (*Move)(Character*, Character*, int direction); //<! Called to move in the given direction.
+		void (*_unknown_v13)(Character*); //!< Called during update routing when character is jumping
+		void (*UpdateAnimationSteps)(Character*); //<! Called at the end of the update routing to update the stepTimer.
+		void (*UpdateNextMovementAction)(Character*); //<! Called when the character finishes moving to see if there is a next movement action to process
+		void (*_unknown_v16)(Character*);
+		void (*_unknown_v17)(Character*);
+		void (*ChangeGraphic)(Character*, char* filename, int index); //<! Called by move route change graphic command
+		void (*Update)(Character*); //<! Character update routine called in map scene main loop. There is a character base version, and Hero and Event overload, both of which call the Character one.
+	};
+
 	/*! \brief Used for movable entities on the map, i.e. events, the hero (and vehicles, but they are not supported yet)
 		\sa RPG::Event
 		\sa RPG::Map::events
@@ -59,7 +83,7 @@ namespace RPG {
 	*/
 	class Character {
 		public:
-			void **vTable;
+			CharacterVTable *vTable;
 			int id; //!< ID of the event (zero if not an ordinary event)
 				int _unknown_8;
 			bool enabled; //!< Is the event visible and enabled?
@@ -283,6 +307,8 @@ RPG::hero->move(moves.c_str(), moves.length());
 			void doStep(RPG::Direction direction);
 	};
 
+	class BattleEvent;
+
 	//class EventData moved to EventData.h class file
 
 	/*! \brief Used for events as subtype of characters
@@ -291,13 +317,12 @@ RPG::hero->move(moves.c_str(), moves.length());
 	class Event : public Character {
 		public:
 			// sizeof(Character) == 0x94
-				int _unknown_94;
 			EventData *data; //!< Pointer to the RPG::EventData of this event
 			EventPage *currentPage; //!< The currently loaded event page
 			bool isWaiting; //!< Is the event waiting? Set to true to run the event's code, but has some dependency with facing/direction event to hero relationships that affect whether it runs or not.
 			int originalMoveRouteIndex; //!< Move route index for custom move type.
 			int triggeredByDecisionKey; //!< True if event was started by player talking to it.
-			int _unknown_AC; // Pointer to More scriptData? See
+			BattleEvent* eventState; //!< Pointer to interpreter event state
 
 			/*! \brief Checks whether a certain event page exists
 
@@ -346,16 +371,6 @@ RPG::hero->move(moves.c_str(), moves.length());
 		HPTS_NORMAL = 32,
 		HPTS_TWICE_NORMAL = 64,
 		HPTS_FOUR_TIMES_NORMAL = 128
-	};
-
-	//! Event trigger
-	enum EventTrigger {
-		ET_ACTION_KEY,
-		ET_PLAYER_TOUCH,
-		ET_EVENT_TOUCH,
-		ET_AUTOSTART,
-		ET_PARALLEL,
-		ET_NONE
 	};
 
 	/*! \brief Used for the hero as subtype of characters
