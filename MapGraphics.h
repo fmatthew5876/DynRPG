@@ -12,5 +12,6 @@ namespace RPG {
 			Tileset *tileset; //!< The referenced tileset 
 			DStringPtr filename; //!< The filename of the tileset (again...)
 			Image *chipsetImage; //!< The chipset's image
+			Image *_unknown_10; //!< Some other image??
 	};
 }

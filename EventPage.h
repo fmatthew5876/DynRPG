@@ -50,7 +50,7 @@ namespace RPG {
 			EventFrame charsetFrame; //!< The starting frame of animation for the charset (See RPG::EventFrame)
 			bool isTransparent; //!< Is the event graphic transparent?
 			int moveSpeed; //!< The event's movement speed (1-8)
-				UnknownPointer *_unknown_34;
+			EventTrigger triggerType;
 			EventMoveFrequency moveFrequency; //!< The event's movement frequency (See RPG::EventMoveFrequency)
 			MoveRoute *moveRoute; //!< The move route of the event
 

@@ -55,19 +55,19 @@ namespace RPG {
 		void (*_unknown_v5)(Character*);
 		void (*_unknown_v6)(Character*);
 		void (*_unknown_v7)(Character*);
-		void (*_unknown_v8)(Character*);
-		void (*_unknown_v8)(Character*);
-		void (*_unknown_v9)(Character*);
-		void (*_unknown_v10)(Character*);
-		void (*ExecuteJump)(Character*);
+		void (*Create)(Character*); //<! Some kind of factory function to construct the object??
+		void (*IsVisibleOnScreen)(Character*); //!< Computes character screen coordinates and checks if character is visible
+		void (*CheckCollisionAgainstOtherCharacter)(Character*, Character*); //<! Checks if this character will be blocked from moving onto the other character.
+		void (*MakeWay)(Character*, int, int, int, int); //!< Checks if character can move to the position. Checks the map and collision with other events.
 		void (*Move)(Character*, Character*, int direction); //<! Called to move in the given direction.
-		void (*_unknown_v13)(Character*); //!< Called during update routing when character is jumping
+		void (*UpdateMovement)(Character*); //!< Called during update routine to process current character movement. Has a base version for character and an overload for the hero which scrolls the map and checks for event collision triggers.
 		void (*UpdateAnimationSteps)(Character*); //<! Called at the end of the update routing to update the stepTimer.
 		void (*UpdateNextMovementAction)(Character*); //<! Called when the character finishes moving to see if there is a next movement action to process
 		void (*_unknown_v16)(Character*);
-		void (*_unknown_v17)(Character*);
-		void (*ChangeGraphic)(Character*, char* filename, int index); //<! Called by move route change graphic command
+		void (*ChangeGraphic)(Character*, DStringPtr filename, int index); //<! Called by move route change graphic command
+		void (*SetMapPosition)(Character*, int, int, int); //<! Sets the map id, x, and y, and clears movement frames. An overload for the hero sets up the new map if map changed.
 		void (*Update)(Character*); //<! Character update routine called in map scene main loop. There is a character base version, and Hero and Event overload, both of which call the Character one.
+		void (*Draw)(Character*); //<! Graphics routine to render the character.
 	};
 
 	/*! \brief Used for movable entities on the map, i.e. events, the hero (and vehicles, but they are not supported yet)

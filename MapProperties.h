@@ -58,7 +58,7 @@ namespace RPG {
 			NamedCatalogPtr<Event*> events; // Duplicate of map->events[##]->data (data is the same anyway...)
 				//NamedCatalogPtr<EventData *> events;  //!< The original definition. Points the array of map events on the current map (one-based) (again??)
 			MapGraphics *graphics; //!< The Tileset, along with the cached graphics?
-				UnknownPointer *charsetGraphics; //!< Not yet implemented. Wtf even is this?
+			DListPtr<Image*> charsetGraphics; //!< A list of cached charset images for this map.
 			int mapSaveCount; //!< Number of times the map was saved in the editor.
 			bool useDungeonGenerator; //!< true if the current map uses the dungeon generator
 			DungeonGenType dGenType; //!< Dungeon generation guidelines (see RPG::DungeonGenType)
