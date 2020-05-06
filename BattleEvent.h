@@ -2,13 +2,27 @@ namespace RPG {
 	//! Stub
 	typedef void BattleEventScriptData;
 
+	class BattleEvent;
+
+	struct BattleEventVTable {
+		void (*_unknown_v0)(BattleEvent*);
+		void (*Reset)(BattleEvent*); //!< Resets battle state
+		void (*_unknown_v2)(BattleEvent*);
+		void (*_unknown_v3)(BattleEvent*);
+		void (*_unknown_v4)(BattleEvent*);
+		void (*_unknown_v5)(BattleEvent*);
+		void (*_unknown_v6)(BattleEvent*);
+		void (*_unknown_v7)(BattleEvent*);
+
+	};
+
 	/*! \brief Used to access battle event parameters (NOT the scriptlines).
 
 		\sa RPG::battleEvents
 	*/
 	class BattleEvent {
 		public:
-			void **vTable;
+			BattleEventVTable *vTable;
 			BattleEventScriptData *eventData; //!< Stub. Use RPG::getBattleEventLine(monsterGroup,battleEventPage,lineId) to access battle event data
 			char showMessage; //!< Whether this event spawned a message box.
 			char abortOnEscape; //!< Flag set if this event started a battle with "abort on escape" options set.

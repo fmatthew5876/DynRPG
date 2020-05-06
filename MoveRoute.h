@@ -80,7 +80,10 @@ namespace RPG {
 	};
 	
 	//! Not implemented yet
-	typedef void MoveRouteItem;
+	struct MoveRouteItem {
+		int _unknown_0;
+		int _unknown_4;
+	};
 	
 	/*! \brief Used for the move route of an character (also set by the "Move Event" command)
 		\sa RPG::MoveType

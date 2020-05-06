@@ -14,20 +14,6 @@ namespace RPG {
 
 	//! One-byte version of RPG::Direction
 	typedef unsigned char Direction_T;
-
-	//! Possible values for RPG::Character::animationType
-	enum AnimationType {
-		ANI_NORMAL, //!< "Non-continuous"
-		ANI_STEPPING, //!< "Continuous" (always stepping)
-		ANI_FIXED_DIR_NORMAL, //!< "Non-continous", fixed direction
-		ANI_FIXED_DIR_STEPPING, //!< "Continuous", fixed direction
-		ANI_FIXED_GRAPHIC, //!< Fixed graphic (no stepping, fixed direction)
-		ANI_SPIN_AROUND //!< Spinning around
-	};
-
-	//! One-byte version of RPG::AnimationType
-	typedef unsigned char AnimationType_T;
-
 	//! Possible values for RPG::Character::step
 	enum AnimationFrameCharset {
 		ANI_FRAME_LEFT,
@@ -36,15 +22,7 @@ namespace RPG {
 		ANI_FRAME_MIDDLE_B
 	};
 
-	//! Possible values for RPG::Character::layer
-	enum Layer {
-		LAYER_BELOW_HERO, //!< Below hero
-		LAYER_SAME_LEVEL_AS_HERO, //!< Same level as hero
-		LAYER_ABOVE_HERO //!< Above hero
-	};
-
-	//! One-byte version of RPG::Layer
-	typedef unsigned char Layer_T;
+	class Character;
 
 	struct CharacterVTable {
 		void (*_unknown_v0)(Character*);
@@ -63,7 +41,7 @@ namespace RPG {
 		void (*UpdateMovement)(Character*); //!< Called during update routine to process current character movement. Has a base version for character and an overload for the hero which scrolls the map and checks for event collision triggers.
 		void (*UpdateAnimationSteps)(Character*); //<! Called at the end of the update routing to update the stepTimer.
 		void (*UpdateNextMovementAction)(Character*); //<! Called when the character finishes moving to see if there is a next movement action to process
-		void (*_unknown_v16)(Character*);
+		void (*UpdateDiagonalFacing)(Character*); //!< Called each frame to fix facing direction for diagonal movement.
 		void (*ChangeGraphic)(Character*, DStringPtr filename, int index); //<! Called by move route change graphic command
 		void (*SetMapPosition)(Character*, int, int, int); //<! Sets the map id, x, and y, and clears movement frames. An overload for the hero sets up the new map if map changed.
 		void (*Update)(Character*); //<! Character update routine called in map scene main loop. There is a character base version, and Hero and Event overload, both of which call the Character one.

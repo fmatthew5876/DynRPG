@@ -1,15 +1,4 @@
 namespace RPG {
-	//! Event trigger
-	enum EventTrigger {
-		ET_ACTION_KEY,
-		ET_PLAYER_TOUCH,
-		ET_EVENT_TOUCH,
-		ET_AUTOSTART,
-		ET_PARALLEL,
-		ET_NONE
-	};
-
-
 	/*! \brief Class used for storing event names, ids, the event pages, and script data
 	
 		\sa RPG::Map
