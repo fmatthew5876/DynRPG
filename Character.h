@@ -435,7 +435,6 @@ RPG::hero->move(moves.c_str(), moves.length());
 	class Vehicle : public Character {
 		public:
 			HeroVehicle type; //!< The id of the vehicle
-			int takeOffTimer; //!< Timer for when taking off. 256-0 when rising into the air (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
 			int ascendTimer; //!< Timer for ascending. 256-0 when rising into the air (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
 			int descendTimer; //!< Timer for descending. 256-0 when landing onto the group (if RPG::HeroVehicle is RPG::HV_AIRSHIP)
 			DStringPtr originalSpriteName; //!< Sprite name set by change vehicle graphic
