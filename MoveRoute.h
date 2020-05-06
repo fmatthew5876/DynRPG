@@ -81,8 +81,15 @@ namespace RPG {
 	
 	//! Not implemented yet
 	struct MoveRouteItem {
-		int _unknown_0;
-		int _unknown_4;
+		void** vTable;
+		MoveType command; //<! The move command code
+		int switchId; //!< Switch id for switch commands
+		DStringPtr graphicFile; //!< filename for change graphic
+		int graphicId; //!< index into graphic filename
+		DStringPtr soundFile; //!< filename for sound
+		int volume; //!< Sound volume
+		int speed; //!< Sound speed
+		int pan; //!< Sound pan
 	};
 	
 	/*! \brief Used for the move route of an character (also set by the "Move Event" command)
