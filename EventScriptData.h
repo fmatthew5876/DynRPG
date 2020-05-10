@@ -18,6 +18,7 @@ namespace RPG {
 				int _unknown_10;
 			EventScriptList *lines; //!< %Event script lines
 			int currentLineId; //!< Current line number
+			int thisEventId; //<! The event id that will be used for "this Event" in interpreter commands.
 
 			/*! \brief Returns a certain RPG::EventScriptLine
 				\param index Line number (zero-based)
