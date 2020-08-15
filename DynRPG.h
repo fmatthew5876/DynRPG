@@ -135,6 +135,7 @@ namespace RPG {
     #include "MapGraphics.h"
     #include "MapProperties.h"
 #include "Map.h" // Updated
+	#include "DBCommonEvent.H"
     #include "CommonEvent.h"
     #include "SceneMap.h"
     #include "SceneDebug.h"
