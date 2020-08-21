@@ -61,7 +61,7 @@ namespace RPG {
 		int (*HasPhysicalEvasionUp)(Battler*);
 		int (*_unknown_v30)(Battler*);
 		int (*_unknown_v31)(Battler*);
-		int (*_unknown_v32)(Battler*);
+		int (*PreventsTerrainDamage)(Battler*);
 		int (*IsInSameParty)(Battler*, Battler*); //<! Used to check if target of attack is in same party and if so, disallow critical hits.
 		int (*GetCriticalHitMessageType)(Battler*); //<! 0 - Monster, 1 - Actor
 		int (*GetHurtType)(Battler*);
