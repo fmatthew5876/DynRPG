@@ -12,7 +12,7 @@ namespace RPG {
 		void (*_unknown_v4)(BattleEvent*);
 		void (*_unknown_v5)(BattleEvent*);
 		void (*_unknown_v6)(BattleEvent*);
-		void (*_unknown_v7)(BattleEvent*);
+		void (*OnFinishEvent)(BattleEvent*);
 
 	};
 

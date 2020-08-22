@@ -66,7 +66,7 @@ namespace RPG {
 			bool defeatAllowed; //!< Is defeat allowed? (This would cause a game over)
 			bool firstStrike; // More research
 				bool _unknown_17;
-				int _unknown_18;
+			BattleResult battleResult; //<! The result of the battle.
 			Image *backdropImage; //!< The RPG::Image object of the backdrop
 			BattleNavigationLevel_T navLevel; //!< Which window or action has the focus?
 			bool isInitialized; //!< Has the battle been initialized?
