@@ -1,4 +1,20 @@
 namespace RPG {
+	class Window;
+
+	struct WindowVTable {
+		void (*_unknown_v3)(Window*);
+		void (*_unknown_v3)(Window*);
+		void (*_unknown_v3)(Window*);
+		void (*_unknown_v3)(Window*);
+		void (*_unknown_v4)(Window*);
+		void (*_unknown_v5)(Window*);
+		void (*_unknown_v6)(Window*);
+		void (*_unknown_v7)(Window*);
+		int (*GetX)(Window*);
+		void (*_unknown_v9)(Window*);
+		void (*_unknown_v10)(Window*);
+	};
+
 	/*! \brief Used for Window objects of all kinds.
 
 		\sa RPG::SceneMenu
@@ -8,7 +24,7 @@ namespace RPG {
 	*/
 	class Window {
 		public:
-			void **vTable;
+			WindowVTable *vTable;
 			/*! \brief The number of choices per row
 				\note The Items window has 2.
 			*/
@@ -38,7 +54,7 @@ namespace RPG {
 			// Can't say what the deal with the Roll-On is. It takes on values from 0..8 and somehow
 			// reflects the progress of an inflateRect() process.
 			int rollOn1;
-			int rollOn2;
+			int rollOn2; //!< When non-zero allows foreground events to display next message without waiting for message box to close.
 			int winTimer; //!< The total number of frames the window has been visible before a RPG::Scene change
 			DListPtr<char> *text; //!< The window's text (doesn't work yet)
 				int _unknown_68;

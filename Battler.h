@@ -97,9 +97,9 @@ namespace RPG {
 		int (*HasAttacksIgnoresEvasion)(Battler*);
 		int (*IgnoresCriticalHits)(Battler*);
 		int (*HasPhysicalEvasionUp)(Battler*);
-		int (*_unknown_v31)(Battler*);
-		int (*_unknown_v32)(Battler*);
 		int (*HasHalfMPConsumption)(Battler*);
+		int (*_unknown_v32)(Battler*);
+		int (*_unknown_v33)(Battler*);
 		int (*IsInSameParty)(Battler*, Battler*); //<! Used to check if target of attack is in same party and if so, disallow critical hits.
 		int (*IsActor)(Battler*); //<! 1 - Hero, 0 - Monster
 		int (*IsMonster)(Battler*); //<! 0 - Hero, 1 - Monster

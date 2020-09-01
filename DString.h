@@ -61,4 +61,18 @@ namespace RPG {
 			//! Returns the length of the string
 			int length();
 	};
+
+	struct TStringListVTable {
+		void (*_unknown_v0)(TStringList*);
+		void (*_unknown_v1)(TStringList*);
+		void (*_unknown_v2)(TStringList*);
+		void (*_unknown_v4)(TStringList*);
+		void (*_unknown_v5)(TStringList*);
+	};
+
+	class TStringList {
+		TStringListVTable* vTable;
+	};
+
+	static RPG::TStringList *&pendingText = (**reinterpret_cast<RPG::TStringList ***>(0x4CDC30));
 }
