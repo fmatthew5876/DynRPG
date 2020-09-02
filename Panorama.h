@@ -1,10 +1,15 @@
 namespace RPG {
+	class Panorama;
+	struct PanoramaVTable {
+		void (*_unknown_v0)(Panorama*);
+		void (*Reset)(Panorama*);
+	};
 	/*! \brief Used to define a panorama object (ie. battle frames), or the panorama/frame on a particular map
 		\sa RPG::Map
 	*/
 	class Panorama {
 		public:
-			void **vTable;
+			PanoramaVTable *vTable;
 			int panoramaOffsetX; //!< PanOffset(x-Axis) (32 for each pixel)
 			int panoramaOffsetY; //!< PanOffset(y-Axis) (32 for each pixel) - 2048 during testing... ?
 			Image *image; //!< The panorama's image (see RPG::Image)

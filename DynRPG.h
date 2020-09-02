@@ -66,6 +66,7 @@ namespace RPG {
 #include "Canvas.h"
 #include "Music.h"
 #include "Sound.h"
+#include "Title.h"
 #include "Input.h" // Updated
 #include "Picture.h"
 #include "DBSystem.h" // Updated

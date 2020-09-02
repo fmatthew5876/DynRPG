@@ -1,4 +1,11 @@
 namespace RPG {
+	class Sound;
+
+	struct SoundVTable {
+		void (*_unknown_v0)(Music*);
+		void (*Reset)(Music*);
+		void (*Copy)(Music*);
+	};
 	/*! \brief Used for sound effect settings
 		
 		This class is used to store the settings of a sound effect "item".
@@ -11,7 +18,7 @@ namespace RPG {
 	*/
 	class Sound {
 		public:
-			void **vTable;
+			SoundVTable *vTable;
 			DStringPtr filename; //!< Filename
 			int volume; //!< Volume (\c 0 to \c 100)
 			int speed; //!< Speed (\c 100 is normal)

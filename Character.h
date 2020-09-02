@@ -26,7 +26,7 @@ namespace RPG {
 
 	struct CharacterVTable {
 		void (*_unknown_v0)(Character*);
-		void (*_unknown_v1)(Character*);
+		void (*Reset)(Character*);
 		void (*_unknown_v2)(Character*);
 		void (*_unknown_v3)(Character*);
 		void (*_unknown_v4)(Character*);

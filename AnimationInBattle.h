@@ -37,5 +37,6 @@ namespace RPG {
 			int currentAnimationId; //!< The ID of the battle animation currently playing
 			AnimationTargetParty currentAnimTarget; //!< The target of the battle animation currently playing (See RPG::AnimationTargetMonster)
 			int currentAnimationFrame; //!< Current animation frame playing
+			int _unknown_last01;
 	};
 }

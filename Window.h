@@ -13,6 +13,16 @@ namespace RPG {
 		int (*GetX)(Window*);
 		void (*_unknown_v9)(Window*);
 		void (*_unknown_v10)(Window*);
+		void (*_unknown_v11)(Window*);
+		void (*_unknown_v12)(Window*);
+		void (*Reset)(Window*);
+		void (*_unknown_v14)(Window*);
+		void (*_unknown_v15)(Window*);
+		void (*_unknown_v16)(Window*);
+		void (*_unknown_v17)(Window*);
+		void (*_unknown_v18)(Window*);
+		void (*_unknown_v19)(Window*);
+		void (*_unknown_v20)(Window*);
 	};
 
 	/*! \brief Used for Window objects of all kinds.
@@ -61,7 +71,7 @@ namespace RPG {
 			int fontSet;  //!< The window's font set?
 				int _unknown_70;
 				int _unknown_74;
-				int _unknown_78;
+			Window* _unknown_78;
 
 			// Functions
 			Window(); //!< Experimental

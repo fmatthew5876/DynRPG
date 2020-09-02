@@ -67,7 +67,7 @@ namespace RPG {
 		int (*GetHurtType)(Battler*);
 #else
 		int (*_unknown_v0)(Battler*);
-		int (*_unknown_v1)(Battler*);
+		int (*Reset)(Battler*);
 		int (*_unknown_v2)(Battler*);
 		int (*_unknown_v3)(Battler*);
 		int (*_unknown_v4)(Battler*);
@@ -75,7 +75,7 @@ namespace RPG {
 		int (*_unknown_v6)(Battler*);
 		int (*_unknown_v7)(Battler*);
 		int (*_unknown_v8)(Battler*);
-		void (*GetBattlerName)(Battler*);
+		void (*GetBattlerName)(Battler*, RPG_DString*);
 		int (*GetMaxHp)(Battler*);
 		int (*GetMaxMp)(Battler*);
 		int (*GetBaseAtk)(Battler*);
@@ -83,26 +83,29 @@ namespace RPG {
 		int (*GetBaseInt)(Battler*);
 		int (*GetBaseAgi)(Battler*);
 		int (*_unknown_v16)(Battler*);
-		int (*_unknown_v17)(Battler*);
-		int (*_unknown_v18)(Battler*);
-		void (*AttackHasAttribute)(Battler*, int);
-		int (*_unknown_v20)(Battler*);
-		int (*_unknown_v21)(Battler*);
+		int (*GetAttributeResist)(Battler*, int);
+		int (*GetConditionResist)(Battler*, int);
+		int (*AttackHasAttribute)(Battler*, int);
+		int (*AttackInflictsCondition)(Battler*, int);
+		int (*AttackInflictsConditionPercentage)(Battler*, int);
 		double (*GetCriticalHitRate)(Battler*);
 		int (*GetHitRate)(Battler*);
 		int (*HasStrongDefense)(Battler*);
 		int (*HasFirstStrike)(Battler*);
 		int (*AttacksTwice)(Battler*);
-		int (*_unknown_v27)(Battler*);
+		int (*AttacksAll)(Battler*);
 		int (*HasAttacksIgnoresEvasion)(Battler*);
 		int (*IgnoresCriticalHits)(Battler*);
 		int (*HasPhysicalEvasionUp)(Battler*);
 		int (*HasHalfMPConsumption)(Battler*);
-		int (*_unknown_v32)(Battler*);
-		int (*_unknown_v33)(Battler*);
+		int (*IgnoresTerrainDamage)(Battler*);
+		int (*AttackMpCost)(Battler*);
 		int (*IsInSameParty)(Battler*, Battler*); //<! Used to check if target of attack is in same party and if so, disallow critical hits.
 		int (*IsActor)(Battler*); //<! 1 - Hero, 0 - Monster
 		int (*IsMonster)(Battler*); //<! 0 - Hero, 1 - Monster
+		int (*IsItemUsable)(Battler*, int);
+		int (*IsSkillUsable)(Battler*, int);
+		int (*SelectAutoBattleAction)(Battler*); //<! Runs the auto battle algorithm and chooses an action
 #endif
 	};
 

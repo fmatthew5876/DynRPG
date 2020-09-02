@@ -1,4 +1,7 @@
 namespace RPG {
+	class MoveRoute;
+	class MoveRouteItem;
+
 	/*! \brief "Move event" command type
 		
 		A few of these commands take parameters, see details. For information
@@ -78,10 +81,16 @@ namespace RPG {
 		MT_INCREASE_TRANSPARENCY,
 		MT_DECREASE_TRANSPARENCY
 	};
+
+	struct MoveRouteItemVTable {
+		void (*_unknown_v0)(MoveRoute*);
+		void (*_unknown_v1)(MoveRouteItem*);
+		void (*_unknown_v2)(MoveRouteItem*);
+	};
 	
 	//! Not implemented yet
 	struct MoveRouteItem {
-		void** vTable;
+		MoveRouteVTable* vTable;
 		MoveType command; //<! The move command code
 		int switchId; //!< Switch id for switch commands
 		DStringPtr graphicFile; //!< filename for change graphic
@@ -91,6 +100,11 @@ namespace RPG {
 		int speed; //!< Sound speed
 		int pan; //!< Sound pan
 	};
+
+	struct MoveRouteVTable {
+		void (*_unknown_v0)(MoveRoute*);
+		void (*Reset)(MoveRoute*);
+	};
 	
 	/*! \brief Used for the move route of an character (also set by the "Move Event" command)
 		\sa RPG::MoveType
@@ -98,7 +112,7 @@ namespace RPG {
 	*/
 	class MoveRoute {
 		public:
-			void **vTable;
+			MoveRouteVTable **vTable;
 			DListPtr<MoveRouteItem *> moves; //!< List of movement commands (internal storage, not yet implemented)
 			DArray<char,0,0> encodedMoves; //!< Encoded movement command list (see RPG::Character::move)
 			bool repeatPattern; //!< \c true if the movement should be repeated until RPG::Character::stop (or "Halt all movement") is called

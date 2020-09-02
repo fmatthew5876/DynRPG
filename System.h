@@ -53,9 +53,11 @@ namespace RPG {
 
 			FontImage font;
 
-			bool systemTiled; //!< Is the window background tiled? (in-game version of RPG::DBSystem::systemTiled)
+			int systemTiled; //!< Is the window background tiled? (in-game version of RPG::DBSystem::systemTiled)
 			SystemFont systemFont; //!< MS Gothic or MS Mincho? (in-game version of RPG::DBSystem::systemFont)  (See RPG::SystemFont)
 			Image *system2Image; //!< \c System2 image
+			Image *system2Image2; //!< Unknown 2nd image loaded after System2 graphic
+			Image *frameImage; //!< frame image
 
 			/*! \brief Loads the font used for text drawing
 				\param fontName Name of the font
@@ -126,12 +128,12 @@ namespace RPG {
 			*/
 			int frameCounter;
 			DStringPtr systemGraphicFilename; //!< Filename of the system graphic (empty for default)
-			bool systemTiled; //!< Is the window background tiled?
+			int systemTiled; //!< Is the window background tiled?
 			SystemFont systemFont; //!< Current system font
 			SystemGraphic *systemGraphic; //!< Current system and system2 graphic
 			DArray<bool, 1,0> switches; //!< %Switches (see also RPG::Switches!)
 			DArray<int, 1,0> variables; //!< %Variables (see also RPG::Variables!)
-			bool messageTransparent; //!< Is the message background invisible? (see also RPG::BattleSettings::transparentWindows)
+			int messageTransparent; //!< Is the message background invisible? (see also RPG::BattleSettings::transparentWindows)
 			MessagePosition messagePosition; //!< Position of the message
 			bool messageAutoPos; //!< Prevent hero from being overlapped by a message?
 			bool messageModal; //!< Should messages pause other event activites?
@@ -180,6 +182,10 @@ namespace RPG {
 			int saveCount; //!< Number of times saved
 			int lastSavedSlot; //!< The last save slot called
 			ATBMode_T atbMode; //!< ATB mode
+			DStringPtr system2GraphicFilename; //!< Filename of the system graphic (empty for default)
+			int _unknown_last01;
+			int _unknown_last02;
+			int _unknown_last03;
 
 	#define defaultAccessorBGM(_member_, _function_) RPG::Music *_function_()
 	#define defaultAccessorSE(_member_, _function_) RPG::Sound *_function_()
