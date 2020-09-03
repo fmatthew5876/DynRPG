@@ -2,20 +2,20 @@ namespace RPG {
 	class Window;
 
 	struct WindowVTable {
-		void (*_unknown_v3)(Window*);
-		void (*_unknown_v3)(Window*);
-		void (*_unknown_v3)(Window*);
+		void (*GetCursorRectScrolled)(Window*,int,RECT*); //<! Get cursor bounding rect for window which is scrolled.
+		void (*GetCursorRectPaged)(Window*,int,RECT*); //!< Get cursor bounding rect for window using pages
+		void (*_unknown_v2)(Window*);
 		void (*_unknown_v3)(Window*);
 		void (*_unknown_v4)(Window*);
-		void (*_unknown_v5)(Window*);
+		void (*UpdateChoicesInput)(Window*);
 		void (*_unknown_v6)(Window*);
 		void (*_unknown_v7)(Window*);
-		int (*GetX)(Window*);
+		void (*_unknown_v8)(Window*);
 		void (*_unknown_v9)(Window*);
-		void (*_unknown_v10)(Window*);
-		void (*_unknown_v11)(Window*);
-		void (*_unknown_v12)(Window*);
 		void (*Reset)(Window*);
+		void (*_unknown_v11)(Window*);
+		void (*Update)(Window*);
+		void (*_unknown_v13)(Window*);
 		void (*_unknown_v14)(Window*);
 		void (*_unknown_v15)(Window*);
 		void (*_unknown_v16)(Window*);

@@ -125,18 +125,54 @@ std::string victoryMessage = RPG::vocabulary[3]
 		
 			87:  "Miss" Message
 	*/
+	struct Vocabulary;
+	struct ShopVocabulary;
+
+	struct ShopVocabulary {
+		void** vTable;
+		RPG::DStringPtr greeting;
+		RPG::DStringPtr reGreeting;
+		RPG::DStringPtr buy;
+		RPG::DStringPtr sell;
+		RPG::DStringPtr leave;
+		RPG::DStringPtr buySelect;
+		RPG::DStringPtr buyNumber;
+		RPG::DStringPtr purchased;
+		RPG::DStringPtr sellSelect;
+		RPG::DStringPtr sellNumber;
+		RPG::DStringPtr sold;
+	};
+
+	struct InnVocabulary {
+		void** vTable;
+		RPG::DStringPtr greeting1;
+		RPG::DStringPtr greeting2;
+		RPG::DStringPtr greeting3;
+		RPG::DStringPtr accept;
+		RPG::DStringPtr cancel;
+	};
+
+	struct VocabularyVTable {
+		void (*_unknown_v0)(Vocabulary*);
+		void (*Reset)(Vocabulary*);
+	};
 	struct Vocabulary {
+		VocabularyVTable* vTable;
+#if RPG_RT_ENGINE == 2000
 		RPG::DStringPtr battleMonsterAppear;
 		RPG::DStringPtr battleStart;
+#endif
 		RPG::DStringPtr battleInitiative;
+#if RPG_RT_ENGINE == 2000
 		RPG::DStringPtr battleEscapeSuccess;
+#endif
 		RPG::DStringPtr battleEscapeFailure;
 		RPG::DStringPtr battleVictory;
 		RPG::DStringPtr battleDefeat;
 		RPG::DStringPtr battleExpGain;
 		RPG::DStringPtr battleMoneyGain;
 		RPG::DStringPtr battleMoneyGain2;
-		RPG::DStringPtr battleItemGain;
+		RPG::DStringPtr battleItemGain; //Confirmed 2k3
 		RPG::DStringPtr battleActionAttack;
 		RPG::DStringPtr battleCriticalHitFromHero;
 		RPG::DStringPtr battleCriticalHitFromMonster;
@@ -158,23 +194,20 @@ std::string victoryMessage = RPG::vocabulary[3]
 		RPG::DStringPtr battleHpMpRecovered;
 		RPG::DStringPtr battleStatRaised;
 		RPG::DStringPtr battleStatDropped;
-		RPG::DStringPtr battleAbsorbedOnHero;
 		RPG::DStringPtr battleAbsorbedOnMonster;
+		RPG::DStringPtr battleAbsorbedOnHero;
 		RPG::DStringPtr battleAttributeUp;
 		RPG::DStringPtr battleAttributeDown;
 		RPG::DStringPtr battleLevelUp;
 		RPG::DStringPtr battleSkillLearned;
-		RPG::DStringPtr _unknown_vocab36;
-		RPG::DStringPtr _unknown_vocab37;
-		RPG::DStringPtr _unknown_vocab38;
-		RPG::DStringPtr _unknown_vocab39;
-		RPG::DStringPtr _unknown_vocab40;
+		ShopVocabulary* shop1;
+		ShopVocabulary* shop2;
+		ShopVocabulary* shop3;
+		InnVocabulary* innA;
+		InnVocabulary* innB;
 		RPG::DStringPtr itemsPossessed;
 		RPG::DStringPtr itemEquipped;
 		RPG::DStringPtr currency;
-		RPG::DStringPtr _unknown_vocab41;
-		RPG::DStringPtr _unknown_vocab42;
-		RPG::DStringPtr _unknown_vocab43;
 		RPG::DStringPtr battleCmdFight;
 		RPG::DStringPtr battleCmdAutoBattle;
 		RPG::DStringPtr battleCmdEscape;
@@ -185,6 +218,9 @@ std::string victoryMessage = RPG::vocabulary[3]
 		RPG::DStringPtr optionEquipment;
 		RPG::DStringPtr optionSave;
 		RPG::DStringPtr optionQuit;
+		RPG::DStringPtr newGame;
+		RPG::DStringPtr loadGame;
+		RPG::DStringPtr exitGame;
 		RPG::DStringPtr statLevel;
 		RPG::DStringPtr statHP;
 		RPG::DStringPtr statMP;
@@ -214,12 +250,10 @@ std::string victoryMessage = RPG::vocabulary[3]
 		RPG::DStringPtr optionRow;
 		RPG::DStringPtr optionWaitOn;
 		RPG::DStringPtr optionWaitOff;
-		RPG::DStringPtr _unknown_vocab86;
 #if RPG_RT_ENGINE == 2003
 		RPG::DStringPtr battleStart2k3;
 		RPG::DStringPtr battleMiss2k3;
 #endif
-		RPG::DStringPtr* messages;
 	};
 
 	static RPG::Vocabulary *vocabulary = (**reinterpret_cast<RPG::Vocabulary ***>(0x4CDCB4));
