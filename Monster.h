@@ -45,8 +45,12 @@ namespace RPG {
 			*/
 			static void loadMonsterGroup(int id);
 	};
-	
-	RPG::AnimationInBattle *&RPG::Monster::animData = (**reinterpret_cast<RPG::AnimationInBattle ***>(0x4CDE64));
+
+	class Monsters {
+		void** vTable;
+		NamedCatalog<RPG::Monster*> catalog;
+		AnimationInBattleData animation;
+	};
 
 	/*! \ingroup game_objects
 		\brief Array of monsters in the current monster group.
@@ -61,7 +65,7 @@ int slimeHp = RPG::monsters[2]->hp; // read HP of third monster
 		\sa RPG::actors
 		\sa RPG::Actor::partyMember
 	*/
-	static RPG::CatalogPtr<RPG::Monster *> &monsters = (**reinterpret_cast<RPG::CatalogPtr<RPG::Monster *> **>(0x4CDE64));
+	static RPG::Monsters *&monsters = (**reinterpret_cast<RPG::Monsters ***>(0x4CDE64));
 	
 	void RPG::Monster::transform(int monsterId) {
 		asm volatile("call *%%esi"

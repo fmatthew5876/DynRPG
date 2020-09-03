@@ -25,6 +25,16 @@ namespace RPG {
 		\sa RPG::Animation
 	*/
 
+	class AnimationInBattleData {
+		public:
+			bool isAnimationPlaying; //!< Is a battle animation playing?
+			AnimationCurrent *currentAnim; //!< The battle animation's data
+			int currentAnimationId; //!< The ID of the battle animation currently playing
+			AnimationTargetParty currentAnimTarget; //!< The target of the battle animation currently playing (See RPG::AnimationTargetMonster)
+			int currentAnimationFrame; //!< Current animation frame playing
+			int _unknown_last01;
+	};
+
 	class AnimationInBattle {
 		public:
 			void **vTable;
@@ -32,11 +42,6 @@ namespace RPG {
 				Stub *_unknown_08; // battlers that are already pointed to in RPG::monsters and RPG::actors
 				int monsterGroupId; //!< The ID of the monster group
 				//int _unknown_0C;
-			bool isAnimationPlaying; //!< Is a battle animation playing?
-			AnimationCurrent *currentAnim; //!< The battle animation's data
-			int currentAnimationId; //!< The ID of the battle animation currently playing
-			AnimationTargetParty currentAnimTarget; //!< The target of the battle animation currently playing (See RPG::AnimationTargetMonster)
-			int currentAnimationFrame; //!< Current animation frame playing
-			int _unknown_last01;
+			AnimationInBattleData data;
 	};
 }

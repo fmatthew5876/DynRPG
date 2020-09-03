@@ -256,5 +256,5 @@ std::string victoryMessage = RPG::vocabulary[3]
 #endif
 	};
 
-	static RPG::Vocabulary *vocabulary = (**reinterpret_cast<RPG::Vocabulary ***>(0x4CDCB4));
+	static RPG::Vocabulary *&vocabulary = (**reinterpret_cast<RPG::Vocabulary ***>(0x4CDCB4));
 }

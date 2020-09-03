@@ -205,7 +205,11 @@ namespace RPG {
 			//void changeClass(RPG::DBClass *index);
 	};
 
-	RPG::AnimationInBattle *&RPG::Actor::animData = (**reinterpret_cast<RPG::AnimationInBattle ***>(0x4CDDC8));
+	class Actors {
+		void** vTable;
+		NamedCatalog<RPG::Actor*> catalog;
+		AnimationInBattleData animation;
+	};
 
 	/*! \ingroup game_objects
 		\brief Array of actors from the database, used for properties which
@@ -219,7 +223,7 @@ int zackHp = RPG::actors[1]->hp;
 		\endcode
 		\sa RPG::dbActors
 	*/
-	static RPG::NamedCatalogPtr<RPG::Actor *> &actors = (**reinterpret_cast<RPG::NamedCatalogPtr<RPG::Actor *> **>(0x4CDDC8));
+	static RPG::Actors *&actors = (**reinterpret_cast<RPG::Actors **>(0x4CDDC8));
 
 
 	void RPG::Actor::addSkill(int skillId) {
@@ -279,4 +283,6 @@ int zackHp = RPG::actors[1]->hp;
 			: "S" (0x4B11B8), "a" (this), "d" (toClass2), "c" (int4)
 			: "cc", "memory");
 	}*/
+
+
 }
