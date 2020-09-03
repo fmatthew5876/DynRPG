@@ -64,6 +64,12 @@ namespace RPG {
 				int _unknown_CC;
 				int _unknown_D0;
 				int _unknown_D4;
+				int _unknown_D8;
+				int _unknown_E0;
+				int _unknown_E4;
+				int _unknown_E8;
+				int _unknown_EC;
+				int _unknown_F0;
 			
 			/*! \brief Returns the HWND of the window control on which the
 				screen is drawn

@@ -178,7 +178,7 @@ if(battler->animationId == 9) battler->animationId = 0;
 				of a monster) or open the action window (in case of an actor).
 			*/
 			int atbValue;
-			bool mirrored; //!< \c true if the battler's image is mirrored
+			int mirrored; //!< \c true if the battler's image is mirrored
 			int frameCounter; //!< Internally used
 			/*! \brief ID of the battle graphic pose (see details)
 

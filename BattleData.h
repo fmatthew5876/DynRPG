@@ -86,7 +86,7 @@ namespace RPG {
 				int _unknown_50;
 				int _unknown_54;
 			int fleeChance; //!< Percentage for escape (Formula: 50 + (100 - 100 * Avg Enemy AGI / Avg Hero AGI))
-			DListPtr<char> battleProgress; // More research
+			DListPtr<Battler> battleProgress; //<! List of battlers who are queued to take action.
 			bool canvasRedrawn; //!< Was the canvas redrawn?
 
 			/*! \brief If a hero is ready to act, their party index will be added to this array
