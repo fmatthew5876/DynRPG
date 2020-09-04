@@ -83,7 +83,7 @@ namespace RPG {
 	};
 
 	struct MoveRouteItemVTable {
-		void (*_unknown_v0)(MoveRoute*);
+		void (*_unknown_v0)(MoveRouteItem*);
 		void (*_unknown_v1)(MoveRouteItem*);
 		void (*_unknown_v2)(MoveRouteItem*);
 	};
