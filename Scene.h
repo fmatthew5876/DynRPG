@@ -6,6 +6,7 @@ namespace RPG {
 	struct SceneBaseVTable {
 		void (*_unknown_v0)(SceneBase*);
 		void (*Reset)(SceneBase*);
+		void (*Draw)(SceneBase*);
 	};
 
 	/*! \brief The base class for all scenes.

@@ -14,9 +14,9 @@ namespace RPG {
 		void (*_unknown_v9)(Window*);
 		void (*Reset)(Window*);
 		void (*_unknown_v11)(Window*);
-		void (*Update)(Window*);
+		void (*Update)(Window*); //!< Update the window - called each frame typically to react to input
 		void (*_unknown_v13)(Window*);
-		void (*_unknown_v14)(Window*);
+		void (*BlitText)(Window*,int,int,char*,int,int);
 		void (*_unknown_v15)(Window*);
 		void (*_unknown_v16)(Window*);
 		void (*_unknown_v17)(Window*);
@@ -71,7 +71,7 @@ namespace RPG {
 			int fontSet;  //!< The window's font set?
 				int _unknown_70;
 				int _unknown_74;
-			Window* _unknown_78;
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 
 			// Functions
 			Window(); //!< Experimental
