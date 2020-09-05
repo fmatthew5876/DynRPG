@@ -4,14 +4,14 @@ namespace RPG {
 	struct WindowVTable {
 		void (*GetCursorRectScrolled)(Window*,int,RECT*); //<! Get cursor bounding rect for window which is scrolled.
 		void (*GetCursorRectPaged)(Window*,int,RECT*); //!< Get cursor bounding rect for window using pages
-		void (*_unknown_v2)(Window*);
+		void (*BlitChoiceText, int)(Window*); //!< A virtual function which refreshes the choice text for the given choice id
 		void (*_unknown_v3)(Window*);
 		void (*_unknown_v4)(Window*);
 		void (*UpdateChoicesInput)(Window*);
 		void (*_unknown_v6)(Window*);
 		void (*_unknown_v7)(Window*);
 		void (*_unknown_v8)(Window*);
-		void (*_unknown_v9)(Window*);
+		void (*BlitChoices)(Window*); //!< Redraws the choices text and cursor
 		void (*Reset)(Window*);
 		void (*_unknown_v11)(Window*);
 		void (*Update)(Window*); //!< Update the window - called each frame typically to react to input

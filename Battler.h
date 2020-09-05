@@ -82,7 +82,7 @@ namespace RPG {
 		int (*GetBaseDef)(Battler*);
 		int (*GetBaseInt)(Battler*);
 		int (*GetBaseAgi)(Battler*);
-		int (*_unknown_v16)(Battler*);
+		int (*GetBaseAgiForWeaponAttack)(Battler*); //!< Evasion for actor weapon attack uses this instead of other AGI function
 		int (*GetAttributeResist)(Battler*, int);
 		int (*GetConditionResist)(Battler*, int);
 		int (*AttackHasAttribute)(Battler*, int);
