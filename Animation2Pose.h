@@ -26,7 +26,7 @@ namespace RPG {
 			int battleCharsetId; //!< The pose's index in the BattleCharSet file (0-7)
 				int _unknown_14;
 				int _unknown_18;
-			PoseAnimationType_T animType; //!< The pose's animation type
+			PoseAnimationType animType; //!< The pose's animation type
 			int battleAnimId; //!< the battle animation ID if animTYpe is set to RPG::PT_BATTLE_ANIMATION (See RPG::PoseAnimationType)
 	};
 	

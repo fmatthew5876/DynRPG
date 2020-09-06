@@ -25,6 +25,27 @@ namespace RPG {
 		AT_LONG_ITEM
 	};
 
+	enum BattlerAnimationState {
+		AMS_IDLE = 0,
+		AMS_PRIMARY_WEAPON = 1,
+		AMS_SECONDARY_WEAPON = 2,
+		AMS_UKNOWN_03 = 3, // Attack?
+		AMS_UNKOWN_04 = 4, // Walk left?
+		AMS_SKILL = 5,
+		AMS_ITEM = 6,
+		AMS_DEAD = 7,
+		AMS_DAMAGE = 8,
+		AMS_CONDITION = 9,
+		AMS_DEFEND = 10,
+		AMS_UNKNOWN_11 = 11, // Idle?
+		AMS_WALK_TO_TARGET = 12, // When preparing to take action - walk left anim
+		AMS_RETURN_TO_ORIGIN = 13, // When finished action - walk back
+		AMS_VICTORY = 14,
+		AMS_UNKNOWN_15 = 15, // Idle?
+		AMS_ESCAPING = 16,
+		AMS_UNKNNOWN_17 = 17,
+	};
+
 	class Battler;
 
 	struct BattlerVTable {
@@ -82,12 +103,12 @@ namespace RPG {
 		int (*GetBaseDef)(Battler*);
 		int (*GetBaseInt)(Battler*);
 		int (*GetBaseAgi)(Battler*);
-		int (*GetBaseAgiForWeaponAttack)(Battler*); //!< Evasion for actor weapon attack uses this instead of other AGI function
+		int (*GetBaseAgiForUsedWeapon)(Battler*); //!< Evasion for actor weapon attack uses this instead of other AGI function
 		int (*GetAttributeResist)(Battler*, int);
 		int (*GetConditionResist)(Battler*, int);
 		int (*AttackHasAttribute)(Battler*, int);
-		int (*AttackInflictsCondition)(Battler*, int);
-		int (*AttackInflictsConditionPercentage)(Battler*, int);
+		int (*WeaponInflictsOrHealsConditionPercentage)(Battler*, int); //!< Get the max condition inflict percentage from all weapons
+		int (*ArmorResistsConditionPercentage)(Battler*, int); //!< Get the max condition resist percentage from all armor
 		double (*GetCriticalHitRate)(Battler*);
 		int (*GetHitRate)(Battler*);
 		int (*HasStrongDefense)(Battler*);
@@ -188,7 +209,7 @@ if(battler->animationId == 9) battler->animationId = 0;
 				damage").
 				\note This member has no meaning to monsters.
 			*/
-			int animationId; //!< The ID of the current battler pose (for Actors)
+			BattlerAnimationState animationId; //!< The ID of the current battler pose (for Actors)
 			int x; //!< Current X coordinate (centered)
 			int y; //!< Current Y coordinate (centered)
 			int originX; //!< Origin X coordinate (used when an actor moves to attack)

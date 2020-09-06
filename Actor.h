@@ -39,11 +39,7 @@ namespace RPG {
 			int agilityDiff; //!< Difference from the default agility value
 				//int skillAmount;
 			DArray<short,0,0> learnedSkills;
-			short weaponId; //!< Database ID of the current weapon (zero for none)
-			short shieldId; //!< Database ID of the current shield (or second-hand weapon, zero for none)
-			short armorId; //!< Database ID of the current armor (zero for none)
-			short helmetId; //!< Database ID of the current helmet (zero for none)
-			short accessoryId; //!< Database ID of the current accessory (zero for none)
+			short equipment[5]; //!< Database ID of the current weapon (0 - weapon, 1 - shield / 2nd weapon, 2 - armor , 3 - helmet, 4 - accessory) (zero value for none)
 			bool twoWeapons; //!< Can the actor hold two weapons?
 			bool lockEquipment; //!< Is the actor's equipment unchangable by the player?
 			//bool autoBattle; //!< Is the battle AI activated for this actor?
