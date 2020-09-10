@@ -82,7 +82,7 @@ namespace RPG {
 			Window *winAction; //!< The RPG::Window object for the action window!
 			int actionMessageLineAmount; // More research
 			int currentHeroId; //!< Party slot
-			Battler *currentHero; //!< The RPG::Battler data for the currently commanded hero
+			Actor *currentHero; //!< The RPG::Battler data for the currently commanded hero
 				int _unknown_50;
 				int _unknown_54;
 			int fleeChance; //!< Percentage for escape (Formula: 50 + (100 - 100 * Avg Enemy AGI / Avg Hero AGI))

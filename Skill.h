@@ -83,7 +83,7 @@ namespace RPG {
 			bool isMpPercent; //!< Does the skill cost a % of MP? \sa RPG::SKILL_NORMAL
 			int mpCostPercent; //!< MP % cost \sa RPG::SKILL_NORMAL
 			bool conditionFlag; //!< Inflict/Remove depending on SkillTarget. true = second option \sa RPG::SKILL_NORMAL
-				int _unknown_01;
+			int invertConditionEffect; //!< If true, healing skills inflict and damage skills recover conditions.
 				int _unknown_02;
 				int _unknown_03;
 			NamedCatalogPtr<AnimationSkill *> skillAnims; //!< Pointer to the RPG::AnimationSkill array \sa RPG::SKILL_NORMAL

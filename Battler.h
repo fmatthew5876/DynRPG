@@ -242,7 +242,7 @@ if(battler->animationId == 9) battler->animationId = 0;
 			ActionType actionType; //!< Whether the action is short, or long (skill is being cast or item is being used)
 			ActionStatus actionStatus; //!< Status of the current action
 			int jobClassId; //!< The job class ID. -1 if it's the database default
-				int _unknown_C0; // poseID (alt) ?? Maybe for job classes -- need to test
+			BattlerAnimationState prevAnimationId; //!< animationId before taking damage. Restored after damage animation finishes.
 			/*! \brief Conditions which will be displayed in the info window (see details)
 
 				At target selection, there will be an info window displayed if

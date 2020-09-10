@@ -94,7 +94,6 @@ namespace RPG {
     #include "Scene.h"
     #include "BattleCommand.h"
 #include "BattleSettings.h" // Updated
-    #include "BattleData.h"
     #include "BattleEvent.h"
     #include "MonsterBehavior.h"
     #include "BattleEventTrigger.h"
@@ -138,6 +137,7 @@ namespace RPG {
 #include "Map.h" // Updated
 	#include "DBCommonEvent.H"
     #include "CommonEvent.h"
+    #include "BattleData.h"
     #include "SceneMap.h"
     #include "SceneDebug.h"
     #include "SceneGameOver.h"
