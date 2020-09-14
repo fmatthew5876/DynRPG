@@ -9,16 +9,19 @@ namespace RPG {
 	//! One-byte version of RPG::CommonEventTrigger
 	typedef unsigned char CommonEventTrigger_T;
 
+	struct CommonEventVTable : IdObjectVTable {
+	};
+
 	/*! \brief Access to the common events. 
 		\sa RPG::commonEvents
 		\sa RPG::CommonEventTrigger
 	*/
 	class CommonEvent {
 		public:
-			void **vTable;
+			CommonEventVTable *vTable;
 			int id; //!< The ID of the common event
 			DStringPtr name; //!< The name of the common event
-				int _unknown_0C;
+			BattleEvent* parallelEventInterpreter;
 				int _unknown_10;
 			EventScriptList *scriptLines; //!< The event script lines
 			CommonEventTrigger_T trigger; //!< The trigger condition for the common event
