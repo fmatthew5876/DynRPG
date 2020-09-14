@@ -14,14 +14,14 @@ namespace RPG {
 		public:
 			void **vTable;
 			Image *parentImage; //!< Pointer to the image to which the color effect belongs
-			int red; //!< Red value (\c 0 to \c 255)
-			int green; //!< Green value (\c 0 to \c 255)
-			int blue; //!< Blue value (\c 0 to \c 255)
-			int chroma; //!< Chroma value (\c 0 to \c 255)
-			int _unknown_18;
-			int _unknown_1C;
-			int _unknown_20;
-			int _unknown_24;
+			int red; //!< Local Red value (\c 0 to \c 255)
+			int green; //!< Local Green value (\c 0 to \c 255)
+			int blue; //!< Local Blue value (\c 0 to \c 255)
+			int chroma; //!< Local Chroma value (\c 0 to \c 255)
+			int screen_red; //!< Screen Red Value (\c 0 to \c 255)
+			int screen_green; //!< Screen Green Value (\c 0 to \c 255)
+			int screen_blue; //!< Screen Blue Value (\c 0 to \c 255)
+			int screen_chroma; //!< Screen Chroma Value (\c 0 to \c 255)
 	};
 
 	/*! \brief Used for image buffers (8 bit)

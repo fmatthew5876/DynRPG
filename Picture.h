@@ -143,6 +143,10 @@ namespace RPG {
 			//! Draws a picture to the screen, even in different game scenes than the map
 			void draw();
 	};
+
+	struct Pictures {
+		NamedCatalogPtr<RPG::Picture *> catalog;
+	};
 	
 	/*! \ingroup game_objects
 		\brief Array of pictures
