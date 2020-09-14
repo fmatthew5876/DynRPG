@@ -15,7 +15,7 @@ namespace RPG {
 	class SceneFile : public SceneBase {
 		public:
 			bool initialized; //!< Has the enter hero name scene initialized?
-			Window *winInfo; //!< The info window (very top)
+			WindowHelp *winHelp; //!< The info window (very top)
 			WindowSaveFile *winFile[15]; //!< The actual file windows
 			FileSceneMode_T mode; //!< The mode of the scene (save or load)
 			bool fromMenu; //!< Set to true to return to the main menu

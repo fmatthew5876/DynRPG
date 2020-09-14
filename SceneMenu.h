@@ -36,11 +36,11 @@ namespace RPG {
 				bool _unknown_0F;
 			Window *winOptions; //!< Pointer to the Options window's objects (Items, Skills, etc.).
 			Window *winGold; //!< Pointer to the Gold window's objects.
-			Window *winParty; //!< Pointer to the Party window's objects.
+			WindowMenuParty *winParty; //!< Pointer to the Party window's objects.
 			WindowMenuTarget *winItemSkillUse; //!< Pointer to the Item/Skill Use window's objects.
 			WindowMenuItem *winItems; //!< Pointer to the Item window's objects. (See RPG::WindowMenuItem)
 			WindowMenuSkill *winSkills; //!< Pointer to the Skills window's objects. (See RPG::WindowMenuSkill)
-			Window *winTeleport; //!< Pointer to the Teleport pseudo-window's objects.
+			WindowMenuTeleport *winTeleport; //!< Pointer to the Teleport pseudo-window's objects.
 			WindowMenuEquip *winEquip; //!< Pointer to the Equip window's objects. (See RPG::WindowMenuEquip)
 			WindowMenuEnd *winQuit; //!< Pointer to the Quit window's objects. (See RPG::WindowMenuEnd)
 			int ScrollUpCountItem; //!< The number of rows off-screen after a scroll (for items)

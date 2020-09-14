@@ -6,8 +6,8 @@ namespace RPG {
 		public:
 			bool initialized; //!< Has the enter hero name scene initialized?
 			Window *winFace; //!< The window that contains the faceset
-			Window *winName; //!< use winName->string to get the name string itself
-			Window *winInput; //!< use winInput->fontSet to get the fontset used
+			WindowName *winName; //!< use winName->string to get the name string itself
+			WindowNameInput *winInput; //!< use winInput->fontSet to get the fontset used
 			Image *faceImage; //!< The face image itself
 			int heroId; //!< The ID of the hero
 			int initialFontSet; //!< The initial font set

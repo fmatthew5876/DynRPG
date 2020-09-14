@@ -17,12 +17,6 @@ namespace RPG {
 		void (*Update)(Window*); //!< Update the window - called each frame typically to react to input
 		void (*Draw)(Window*);
 		void (*BlitText)(Window*,int,int,char*,int,int);
-		void (*_unknown_v15)(Window*);
-		void (*_unknown_v16)(Window*);
-		void (*_unknown_v17)(Window*);
-		void (*_unknown_v18)(Window*);
-		void (*_unknown_v19)(Window*);
-		void (*_unknown_v20)(Window*);
 	};
 
 	/*! \brief Used for Window objects of all kinds.
@@ -189,10 +183,9 @@ namespace RPG {
 	*/
 	class WindowMessage : public Window {
 		public:
-			Window* altWindow; //!< alternate window, used for different purposes by different screens.
-			Window *winGold; //!< Pointer to gold window
-				//int _unknown_7C; // Message box text... not yet implemented // Doesn't crash: DList<DStringPtr > *text
-			WindowMessageBox *text;
+			WindowGold *winGold; //!< Pointer to gold window
+			TStringList* text;
+			WindowMessageBox *messageBox;
 			int currentTextRow; //!< The current row of the text being drawn (1-4)
 			int currentTextColumn; //!< The current column of the text being drawn (1-??)
 			int currentTextX; //!< The x-coordinate of the text being drawn, relative to where the text started drawing
@@ -226,6 +219,12 @@ namespace RPG {
 		int n = 1;
 		asm volatile("call *%%esi" : : "S" (0x40376), "a" (this) : "cc", "memory");
 	}
+
+	class WindowMenuParty : public Window {
+	};
+
+	class WindowMenuTeleport : public Window {
+	};
 
 	/*! \brief Used for skill/item target sub-menus (when a skill/item is used on a party member)
 
@@ -270,17 +269,30 @@ namespace RPG {
 		asm volatile("call *%%esi" : : "S" (0x4C9274), "a" (this) : "edx", "ecx", "cc", "memory");
 	}
 
+	class WindowMenuEquip;
+
+	class WindowMenuEquipStatus : public Window {
+		WindowMenuEquip* mainWindow;
+		int attack;
+		int defense;
+		int intelligence;
+		int agility;
+	};
+
+	class WindowMenuEquipStatus2 : public Window {
+		WindowMenuEquip* mainWindow;
+	};
+
 	/*! \brief Used for equip menu from the main menu.
 
 		\sa RPG::SceneMenu
 	*/
 	class WindowMenuEquip : public Window {
 		public:
-			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			int heroId; //!< Database ID of the hero selected
-			Window *winInfo; //!< The sub-window for the equipment's description
-			Window *winLeft; //!< The sub-window for the Selected hero's name and their stats
-			Window *winRight; //!< The sub-window for the equipment slots and the currently equipped items
+			WindowHelp* winHelp; //!< Shows equipment descripton
+			WindowMenuEquipStatus *winLeft; //!< The sub-window for the Selected hero's name and their stats
+			WindowMenuEquipStatus2 *winRight; //!< The sub-window for the equipment slots and the currently equipped items
 	};
 
 	/*! \brief Used for quit menu from the main menu.
@@ -299,8 +311,8 @@ namespace RPG {
 	*/
 	class WindowMenuStatus : public Window {
 		public:
-			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			int heroId; //!< Database ID of the hero selected
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			Window *winHpMpExp; //!< The sub-window for HP/MP/Exp (Upper-right)
 			Window *winMain; //!< The sub-window for  the hero's name/class/title/condition/level
 			Window *winEquipment; //!< The sub-window for the quipment
@@ -323,15 +335,24 @@ namespace RPG {
 	*/
 	class WindowSaveFile : public Window {
 		public:
-			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			int saveSlotId; //!< The ID of the save slot currently selected
 			Image *partyFaceImage[4]; //!< Array for the facesets of the 4 party members
 				int _unknown_8C;
 			int timeStamp; //!< The timestamp of the save?
 	};
 
-	class WindowBattleFightEscape : public Window {
-	    public:
+	class WindowShopBuy: public Window {
+		void* unknown;
+	};
+
+	class WindowShopSell: public Window {
+	};
+
+	class WindowShopVending: public Window {
+		int itemId;
+		int itemPrice;
+		int itemQty;
+		bool isSelling;
 	};
 
 	class WindowBattleCommand : public Window {
@@ -351,10 +372,30 @@ namespace RPG {
 
 	class WindowBattleAction: public Window {
 	    public:
-			DStringPtr* unknownText0;
-			DStringPtr* unknownText1;
-			DStringPtr* unknownText2;
-			DStringPtr* unknownText3;
+			DStringPtr unknownText0;
+			DStringPtr unknownText1;
+			DStringPtr unknownText2;
+			DStringPtr unknownText3;
+	};
+
+	class WindowDebugLeft: public Window {
+	};
+
+	class WindowDebugRight: public Window {
+	};
+
+	class WindowDebugValue: public Window {
+		int value;
+	};
+
+	class WindowName: public Window {
+		DStringPtr name;
+	};
+
+	class WindowNameInput: public Window {
+		int xPosition;
+		int yPosition;
+		DStringPtr text;
 	};
 
 	/*Window() {

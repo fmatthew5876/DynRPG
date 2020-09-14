@@ -51,10 +51,10 @@ namespace RPG {
 				bool _unknown_0F;
 			Window *winShopCover; //!< Pointer to the cover window's objects. This appears over the shop when selecting buy/sell/leave.
 			Window *winShopMessage; //!< Pointer to the message box window's objects.
-			Window *winShopInfo; //!< Pointer to the info window's objects.
-			Window *winShopBuy; //!< Pointer to the buy window's objects. Same dimensions as Sell/Vending.
-			Window *winShopSell; //!< Pointer to the sell window's objects. Same dimensions as Buy/Vending.
-			Window *winShopVending; //!< Pointer to the vending window's objects. Same dimensions as Buy/Sell.
+			WindowHelp *winShopInfo; //!< Pointer to the info window's objects.
+			WindowShopBuy *winShopBuy; //!< Pointer to the buy window's objects. Same dimensions as Sell/Vending.
+			WindowShopSell *winShopSell; //!< Pointer to the sell window's objects. Same dimensions as Buy/Vending.
+			WindowShopVending *winShopVending; //!< Pointer to the vending window's objects. Same dimensions as Buy/Sell.
 			Window *winShopParty; //!< Pointer to the party window's objects.
 			Window *winShopOwnedEquipped; //!< Pointer to the owned/equipped window's objects.
 			Window *winShopGold; //!< Pointer to the gold window's objects.
