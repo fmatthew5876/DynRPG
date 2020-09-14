@@ -50,8 +50,8 @@ namespace RPG {
 			int battleCommands[7]; //!< The current battle commands for this actor (\c 0 and \c -1 both mean "no command at this position")
 
 			//Fun part
-				int _unknown_150; //DArray<short> tempSkills; // Temporary skills array - Unsure about defining it. DArray uses an extra byte
-			bool classChanging; //!< Is the actor's class in the process of changing?
+			short* tempSkills; // Temporary skills array
+			bool classChanged;
 			Image *poses[32]; //!< The pose images. These include each of the 3 frames of animation in the pose
 			Image *posesMirrored[32]; //!< The mirrored pose images
 			Image *firstWeapon; //!< The weapon image for the battler's first equipped weapon
@@ -80,7 +80,7 @@ namespace RPG {
 			int afterImageDestinationX; //!< Destination X coordinate of the after image
 			int afterImageDestinationY; //!< Destination Y coordinate of the after image
 			AnimationMoveBeforeAttack weaponMovement; //!< The weapon's movement before attacking (See RPG::AnimationMoveBeforeAttack)
-			bool weaponAddAfterImage; //!< "Add" the after image of the weapon?
+			int weaponAddAfterImage; //!< "Add" the after image of the weapon?
 			WeaponNumberOfAttacks weaponNumAttacks; //!< Number of attacks for the weapon (See RPG::WeaponNumberOfAttacks)
 			bool isRangedWeapon; //!< Is ranged weapon?
 				int _unknown_304;
@@ -88,8 +88,8 @@ namespace RPG {
 			WeaponRangedTargetting weaponTargetting; //!< If a ranged weapon, the weapons' target(s) (see RPG::WeaponRangedTargetting)
 			WeaponRangedAnimSpeed rangedAnimSpeed; //!< Ranged animation speed? (See RPG::WeaponRangedAnimSpeed)
 			WeaponSlotInUse usedWeaponSlot; //!< If actor uses two weapons, the slot of the weapon currently being used (See RPG::WeaponSlotInUse)
-				int _unknown_318; // Another AuroraBoard
-				int _unknown_31C; // Another AuroraBoard
+			Image* _unknownImage318; // Another AuroraBoard
+			Image* _unknownImage31C; // Another AuroraBoard
 			AnimationCurrent *actorAnim; //!< The actor's battle animation data
 			int actorAnimationId; //!< The ID of the actor's current battle animation. Can be battler or weapon anims
 			int actorAnimationFrame; //!< The frame of the battle animation

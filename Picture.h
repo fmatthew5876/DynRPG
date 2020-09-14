@@ -9,6 +9,7 @@ namespace RPG {
 	class Picture;
 
 	struct PictureVTable : IdObjectVTable {
+		void (*Create)(Picture*);
 	};
 	
 	/*! \brief Used for in-game pictures
