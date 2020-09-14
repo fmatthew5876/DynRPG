@@ -1,7 +1,4 @@
 namespace RPG {
-	//! Not implemented yet
-	typedef void AuroraBoard;
-
 	/*! \brief The Game Over scene.
 		\sa RPG::gameOver
 	*/

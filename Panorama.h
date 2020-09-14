@@ -1,8 +1,6 @@
 namespace RPG {
 	class Panorama;
-	struct PanoramaVTable {
-		void (*_unknown_v0)(Panorama*);
-		void (*Reset)(Panorama*);
+	struct PanoramaVTable : ObjectVTable {
 	};
 	/*! \brief Used to define a panorama object (ie. battle frames), or the panorama/frame on a particular map
 		\sa RPG::Map

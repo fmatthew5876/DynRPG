@@ -24,15 +24,7 @@ namespace RPG {
 
 	class Character;
 
-	struct CharacterVTable {
-		void (*_unknown_v0)(Character*);
-		void (*Reset)(Character*);
-		void (*_unknown_v2)(Character*);
-		void (*_unknown_v3)(Character*);
-		void (*_unknown_v4)(Character*);
-		void (*_unknown_v5)(Character*);
-		void (*_unknown_v6)(Character*);
-		void (*_unknown_v7)(Character*);
+	struct CharacterVTable : IdObjectVTable {
 		void (*Create)(Character*); //<! Some kind of factory function to construct the object??
 		void (*IsVisibleOnScreen)(Character*); //!< Computes character screen coordinates and checks if character is visible
 		void (*CheckCollisionAgainstOtherCharacter)(Character*, Character*); //<! Checks if this character will be blocked from moving onto the other character.

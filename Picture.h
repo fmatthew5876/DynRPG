@@ -5,6 +5,11 @@ namespace RPG {
 		PFX_ROTATE, //!< Rotation
 		PFX_RIPPLE //!< Ripple effect ("Waver")
 	};
+
+	class Picture;
+
+	struct PictureVTable : IdObjectVTable {
+	};
 	
 	/*! \brief Used for in-game pictures
 		
@@ -29,7 +34,7 @@ namespace RPG {
 	*/
 	class Picture {
 		public:
-			void **vTable;
+			PictureVTable *vTable;
 			int id; //!< Picture ID
 				int _unknown_8;
 			Image *image; //!< RPG::Image buffer of the top half (see class description)

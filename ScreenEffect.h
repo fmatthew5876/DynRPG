@@ -14,12 +14,17 @@ namespace RPG {
 		double ay; //!< Particle y accelration (sandstorm only)
 	};
 
+	class ScreenEffect;
+
+	struct ScreenEffectVTable : ObjectVTable {
+	};
+
 	/*! \brief Screen effects
 		\sa RPG::Screen
 	*/
 	class ScreenEffect {
 		public:
-			void **vTable;
+			ScreenEffectVTable *vTable;
 			/*! \brief Screen tint's final red value
 				
 				Supported values are from \c 0 (completely black) to \c 200
@@ -113,7 +118,7 @@ namespace RPG {
 			int animationCurrentFrame; //<! Current animation id frame
 			bool animationActive; //<! Whether or not animation is active
 			bool animationGlobal; //<! Whether or not animation affects whole screen
-			int _unknown_88; //Always 38073260?
+			Image* rainSnowImage; //<! 6x26 pixel image used to store rain and snow weather particles. Top 24 rows are for rain, bottom 2 for snow.
 
 			/*! \brief Which weather effect is active
 			    0 - None
@@ -147,8 +152,9 @@ namespace RPG {
 
 				This 16x18 texture is randomly generated each time RPG_RT starts.
 				It is used for both font and back fog layers.
+				The top 16 rows are for the randomly generated fog text, the bottom 2 rows are for the sandstorm particles.
 			*/
-			Image* fog_image;
+			Image* fogSandImage;
 
 			double continuousFlashIntensity; //!< Value to reset flash intensity when continuous flash repeats
 			int continuousFlashTimer; //!< Value to reset flashTimer when continuous flash repeats

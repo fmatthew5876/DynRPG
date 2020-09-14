@@ -48,7 +48,7 @@ namespace RPG {
 
 	class Battler;
 
-	struct BattlerVTable {
+	struct BattlerVTable : IdObjectVTable {
 #if RPG_RT_ENGINE == 2000
 		int (*GetBaseAtk)(Battler*);
 		int (*GetBaseDef)(Battler*);
@@ -87,15 +87,7 @@ namespace RPG {
 		int (*GetCriticalHitMessageType)(Battler*); //<! 0 - Monster, 1 - Actor
 		int (*GetHurtType)(Battler*);
 #else
-		int (*_unknown_v0)(Battler*);
-		int (*Reset)(Battler*);
-		int (*_unknown_v2)(Battler*);
-		int (*_unknown_v3)(Battler*);
-		int (*_unknown_v4)(Battler*);
-		int (*_unknown_v5)(Battler*);
-		int (*_unknown_v6)(Battler*);
-		int (*_unknown_v7)(Battler*);
-		int (*_unknown_v8)(Battler*);
+		int (*Create)(Battler*); //!< Constructor
 		void (*GetBattlerName)(Battler*, RPG_DString*);
 		int (*GetMaxHp)(Battler*);
 		int (*GetMaxMp)(Battler*);

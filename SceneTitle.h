@@ -1,7 +1,4 @@
 namespace RPG {
-	//! Not implemented yet
-	typedef void AuroraBoard;
-
 	/*! \brief Access to the title screen parameters. 
 		\sa RPG::title
 	*/

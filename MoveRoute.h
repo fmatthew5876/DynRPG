@@ -82,10 +82,7 @@ namespace RPG {
 		MT_DECREASE_TRANSPARENCY
 	};
 
-	struct MoveRouteItemVTable {
-		void (*_unknown_v0)(MoveRouteItem*);
-		void (*_unknown_v1)(MoveRouteItem*);
-		void (*_unknown_v2)(MoveRouteItem*);
+	struct MoveRouteItemVTable : ObjectVTable {
 	};
 	
 	//! Not implemented yet
@@ -101,9 +98,7 @@ namespace RPG {
 		int pan; //!< Sound pan
 	};
 
-	struct MoveRouteVTable {
-		void (*_unknown_v0)(MoveRoute*);
-		void (*Reset)(MoveRoute*);
+	struct MoveRouteVTable : ObjectVTable {
 	};
 	
 	/*! \brief Used for the move route of an character (also set by the "Move Event" command)

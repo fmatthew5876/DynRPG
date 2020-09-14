@@ -1,4 +1,7 @@
 namespace RPG {
+	struct DListVTable {
+		void (*_unknown_v0)(void*);
+	};
 	/*! \brief Class representing Delphi's \c TList (without resizing for the moment)
 		\sa RPG::DListPtr
 		\sa RPG::Catalog
@@ -6,7 +9,7 @@ namespace RPG {
 	template <class T>
 	class DList {
 		public:
-			void **vTable;
+			DListVTable *vTable;
 			T *items; //!< Pointer to the actual array
 			int count; //!< Number of elements in the list
 

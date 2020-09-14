@@ -1,7 +1,4 @@
 namespace RPG {
-	//! Not implemented yet
-	typedef void AuroraBoard;
-
 	/*! \brief The Enter Hero Name scene.
 		\sa RPG::enterName
 	*/

@@ -1,10 +1,9 @@
 namespace RPG {
 	//! Not implemented yet
-	typedef void AuroraBoard;
 
 	class SceneBase;
 	struct SceneBaseVTable {
-		void (*_unknown_v0)(SceneBase*);
+		void (*Create)(SceneBase*);
 		void (*Reset)(SceneBase*);
 		void (*Draw)(SceneBase*);
 	};

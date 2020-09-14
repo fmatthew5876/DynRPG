@@ -56,6 +56,7 @@ namespace RPG {
 }
 
  // Note: Do not change the include order unless you know what you're doing!
+#include "Object.h"
 #include "DArray.h"
 #include "ArrayBaseOne.h"
 #include "DList.h"
@@ -64,6 +65,7 @@ namespace RPG {
 #include "DBitmap.h"
 #include "Image.h"
 #include "Canvas.h"
+#include "AuroraBoard.h"
 #include "Music.h"
 #include "Sound.h"
 #include "Title.h"
@@ -137,6 +139,7 @@ namespace RPG {
 #include "Map.h" // Updated
 	#include "DBCommonEvent.H"
     #include "CommonEvent.h"
+    #include "Save.h"
     #include "BattleData.h"
     #include "SceneMap.h"
     #include "SceneDebug.h"

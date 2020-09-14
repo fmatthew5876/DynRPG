@@ -9,6 +9,9 @@ namespace RPG {
 			char *uses;
 	};*/
 
+	class Inventory;
+	struct InventoryVTable : ObjectVTable {
+	};
 
 	/*! \brief Used for the inventory data and statistics of the current game being played.
 
@@ -18,7 +21,7 @@ namespace RPG {
 	*/
 	class Inventory {
 		public:
-			void **vTable;
+			InventoryVTable *vTable;
 
 			/*! \brief Similarly to RPG::Actor::partyMember(index), this returns the database value of the hero,
 				however, you can also use this DArray to retrieve the party's size (RPG::inventory->party.size)

@@ -1,10 +1,7 @@
 namespace RPG {
 	class Music;
 
-	struct MusicVTable {
-		void (*_unknown_v0)(Music*);
-		void (*Reset)(Music*);
-		void (*Copy)(Music*);
+	struct MusicVTable : ObjectVTable {
 	};
 	/*! \brief Used for background music settings
 		

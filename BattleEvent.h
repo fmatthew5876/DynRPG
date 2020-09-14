@@ -4,16 +4,8 @@ namespace RPG {
 
 	class BattleEvent;
 
-	struct BattleEventVTable {
-		void (*_unknown_v0)(BattleEvent*);
-		void (*Reset)(BattleEvent*); //!< Resets battle state
-		void (*_unknown_v2)(BattleEvent*);
-		void (*_unknown_v3)(BattleEvent*);
-		void (*_unknown_v4)(BattleEvent*);
-		void (*_unknown_v5)(BattleEvent*);
-		void (*_unknown_v6)(BattleEvent*);
+	struct BattleEventVTable : ObjectVTable {
 		void (*OnFinishEvent)(BattleEvent*);
-
 	};
 
 	/*! \brief Used to access battle event parameters (NOT the scriptlines).

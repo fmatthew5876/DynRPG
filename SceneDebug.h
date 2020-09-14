@@ -1,7 +1,4 @@
 namespace RPG {
-	//! Not implemented yet
-	typedef void AuroraBoard;
-
 	/*! \brief The Debug scene upon pressing F9 in test play mode.
 		\sa RPG::debug
 	*/

@@ -72,14 +72,14 @@ namespace RPG {
 			bool isInitialized; //!< Has the battle been initialized?
 				bool _unknown_22;
 				bool _unknown_23;
-			Window *winParty; //!< The RPG::Window object of the party
-			Window *winFightEscape; //!< The RPG::Window object for fight/escape/autobattle
-			Window *winCommand; //!< The RPG::Window object for commands
-			Window *winSkill; //!< The RPG::Window object for skills
-			Window *winItem; //!< The RPG::Window object for items
-			Window *winPartyTarget; //!< The RPG::Window object for targetting party members
-			Window *winMonTarget; //!< The RPG::Window object for targetting enemies
-			Window *winAction; //!< The RPG::Window object for the action window!
+			WindowBattleParty *winParty; //!< The RPG::Window object of the party
+			WindowBattleFightEscape *winFightEscape; //!< The RPG::Window object for fight/escape/autobattle
+			WindowBattleCommand *winCommand; //!< The RPG::Window object for commands
+			WindowMenuSkill *winSkill; //!< The RPG::Window object for skills
+			WindowMenuItem *winItem; //!< The RPG::Window object for items
+			WindowBattleParty *winPartyTarget; //!< The RPG::Window object for targetting party members
+			WindowBattleMonster *winMonTarget; //!< The RPG::Window object for targetting enemies
+			WindowBattleAction *winAction; //!< The RPG::Window object for the action window!
 			int actionMessageLineAmount; // More research
 			int currentHeroId; //!< Party slot
 			Actor *currentHero; //!< The RPG::Battler data for the currently commanded hero

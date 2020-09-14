@@ -1,7 +1,4 @@
 namespace RPG {
-	//! Not implemented yet
-	typedef void AuroraBoard;
-
 	/*! \brief Possible values for RPG::SceneFile::mode
 	*/
 	enum FileSceneMode {

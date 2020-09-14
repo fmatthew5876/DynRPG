@@ -1,4 +1,8 @@
 namespace RPG {
+	class Title;
+
+	struct TitleVTable : ObjectVTable {
+	};
 	/*! \brief Used to store the party information in SceneFile save games.
 	*/
 	class Title {

@@ -106,6 +106,10 @@ namespace RPG {
 	//! One-byte version or RPG::ATBMode
 	typedef unsigned char ATBMode_T;
 
+	struct System;
+
+	struct SystemVTable : ObjectVTable {
+	};
 
 	/*! \brief Used for system data which can change in-game
 
@@ -118,7 +122,7 @@ namespace RPG {
 	*/
 	class System {
 		public:
-			void **vTable;
+			SystemVTable *vTable;
 			Scene_T scene; //!< Current game scene (see RPG::Scene)
 			/*! \brief Internal frame counter (see details!)
 

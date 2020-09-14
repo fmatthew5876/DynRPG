@@ -4,18 +4,18 @@ namespace RPG {
 	struct WindowVTable {
 		void (*GetCursorRectScrolled)(Window*,int,RECT*); //<! Get cursor bounding rect for window which is scrolled.
 		void (*GetCursorRectPaged)(Window*,int,RECT*); //!< Get cursor bounding rect for window using pages
-		void (*BlitChoiceText, int)(Window*); //!< A virtual function which refreshes the choice text for the given choice id
-		void (*_unknown_v3)(Window*);
+		void (*BlitEntity)(Window*); //!< For a window which stores data, updates the data element?
+		void (*BlitChoicesText)(Window*); //!< A virtual function which refreshes the choice text for the given choice id
 		void (*_unknown_v4)(Window*);
 		void (*UpdateChoicesInput)(Window*);
 		void (*_unknown_v6)(Window*);
 		void (*_unknown_v7)(Window*);
-		void (*_unknown_v8)(Window*);
+		void (*Create)(Window*);
 		void (*BlitChoices)(Window*); //!< Redraws the choices text and cursor
 		void (*Reset)(Window*);
 		void (*_unknown_v11)(Window*);
 		void (*Update)(Window*); //!< Update the window - called each frame typically to react to input
-		void (*_unknown_v13)(Window*);
+		void (*Draw)(Window*);
 		void (*BlitText)(Window*,int,int,char*,int,int);
 		void (*_unknown_v15)(Window*);
 		void (*_unknown_v16)(Window*);
@@ -71,7 +71,6 @@ namespace RPG {
 			int fontSet;  //!< The window's font set?
 				int _unknown_70;
 				int _unknown_74;
-			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 
 			// Functions
 			Window(); //!< Experimental
@@ -148,7 +147,12 @@ namespace RPG {
 		asm volatile("call *%%esi" : : "S" (0x40376), "a" (this) : "edx", "ecx", "cc", "memory");
 	}
 
+	class WindowHelp : public Window {
+		DStringPtr helpText;
+	};
 
+	class WindowGold : public Window {
+	};
 
 	int RPG::Window::getSelected() {
 		if (this->choiceActive) {
@@ -185,6 +189,7 @@ namespace RPG {
 	*/
 	class WindowMessage : public Window {
 		public:
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			Window *winGold; //!< Pointer to gold window
 				//int _unknown_7C; // Message box text... not yet implemented // Doesn't crash: DList<DStringPtr > *text
 			WindowMessageBox *text;
@@ -228,6 +233,7 @@ namespace RPG {
 	*/
 	class WindowMenuTarget : public Window {
 		public:
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			Window *winItemName; //!< The sub-window for the item name in the upper-left
 			Window *winNumUses; //!< The sub-window for the amount owned/mp cost below the item name window
 	};
@@ -239,6 +245,7 @@ namespace RPG {
 	class WindowMenuItem : public Window {
 		public:
 			int heroId; //!< Database ID of the hero selected
+			WindowHelp* winHelp; //!< alternate window, used for different purposes by different screens.
 			Window *winInfo; //!< The sub-window for the item description
 	};
 
@@ -249,10 +256,10 @@ namespace RPG {
 	class WindowMenuSkill : public Window {
 		public:
 			int heroId; //!< Database ID of the hero selected
+			WindowHelp* winHelp; //!< alternate window, used for different purposes by different screens.
 			Window *winInfo; //!< The sub-window for the skill description
-			Window *winHeroInfo; //!< The sub-window for the selected hero information
-				int _unknown_84;
 			DList<int> *skillSubsets; //!< Zero-based Array of skill subsets. Unsure about this though...
+			Window *winHeroInfo; //!< The sub-window for the selected hero information
 			bool isSkillSubset; //!< Is the selected skill a subset?
 			//Window *winHeroMp; // ????
 
@@ -269,6 +276,7 @@ namespace RPG {
 	*/
 	class WindowMenuEquip : public Window {
 		public:
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			int heroId; //!< Database ID of the hero selected
 			Window *winInfo; //!< The sub-window for the equipment's description
 			Window *winLeft; //!< The sub-window for the Selected hero's name and their stats
@@ -281,6 +289,7 @@ namespace RPG {
 	*/
 	class WindowMenuEnd : public Window {
 		public:
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			Window *winQuitMsg; //!< The sub-window for the "Are you sure" message
 	};
 
@@ -290,6 +299,7 @@ namespace RPG {
 	*/
 	class WindowMenuStatus : public Window {
 		public:
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			int heroId; //!< Database ID of the hero selected
 			Window *winHpMpExp; //!< The sub-window for HP/MP/Exp (Upper-right)
 			Window *winMain; //!< The sub-window for  the hero's name/class/title/condition/level
@@ -302,6 +312,7 @@ namespace RPG {
 	*/
 	class WindowMenuOrder : public Window {
 		public:
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			Window *winNewConfig; //!< The sub-window for the new configuration
 			Window *winConfirm; //!< The sub-window for the new config confirmation
 	};
@@ -312,10 +323,38 @@ namespace RPG {
 	*/
 	class WindowSaveFile : public Window {
 		public:
+			Window* altWindow; //!< alternate window, used for different purposes by different screens.
 			int saveSlotId; //!< The ID of the save slot currently selected
 			Image *partyFaceImage[4]; //!< Array for the facesets of the 4 party members
 				int _unknown_8C;
 			int timeStamp; //!< The timestamp of the save?
+	};
+
+	class WindowBattleFightEscape : public Window {
+	    public:
+	};
+
+	class WindowBattleCommand : public Window {
+	    public:
+	};
+
+	class WindowBattleParty : public Window {
+	    public:
+	};
+
+	class WindowBattleMonster: public Window {
+	    public:
+			int monsterIds[8]; //<! Id of each monster in the window?
+			int unknownData[2];
+			Window* unknownWindow;
+	};
+
+	class WindowBattleAction: public Window {
+	    public:
+			DStringPtr* unknownText0;
+			DStringPtr* unknownText1;
+			DStringPtr* unknownText2;
+			DStringPtr* unknownText3;
 	};
 
 	/*Window() {
