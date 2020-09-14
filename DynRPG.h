@@ -65,7 +65,6 @@ namespace RPG {
 #include "DBitmap.h"
 #include "Image.h"
 #include "Canvas.h"
-#include "AuroraBoard.h"
 #include "Music.h"
 #include "Sound.h"
 #include "Title.h"
