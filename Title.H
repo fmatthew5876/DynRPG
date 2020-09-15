@@ -7,7 +7,7 @@ namespace RPG {
 	*/
 	class Title {
 		public:
-			void **vTable;
+			TitleVTable *vTable;
 			double timestamp;
 			DString hero_name;
 			int hero_level;

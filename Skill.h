@@ -87,8 +87,7 @@ namespace RPG {
 				int _unknown_02;
 				int _unknown_03;
 			NamedCatalogPtr<AnimationSkill *> skillAnims; //!< Pointer to the RPG::AnimationSkill array \sa RPG::SKILL_NORMAL
-			
-			
+			int battlerAnim;
 	};
 	
 	/*! \ingroup game_objects

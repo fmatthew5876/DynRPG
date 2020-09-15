@@ -57,6 +57,7 @@ namespace RPG {
 
  // Note: Do not change the include order unless you know what you're doing!
 #include "Object.h"
+#include "Chunk.h"
 #include "DArray.h"
 #include "ArrayBaseOne.h"
 #include "DList.h"

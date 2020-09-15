@@ -150,6 +150,7 @@ namespace RPG {
 			ItemConditionFlag conditionFlag; //!< Does the item remove the condition instead of inflict? (see RPG::ItemConditionFlag)
 			WeaponRangedTrajectory weaponTrajectory; //!< If a ranged weapon, the weapons' trajectory (see RPG::WeaponRangedTrajectory)
 			WeaponRangedTargetting weaponTargetting; //!< If a ranged weapon, the weapons' target(s) (see RPG::WeaponRangedTargetting)
+			int weaponAnimation;
 			
 	};
 	
