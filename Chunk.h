@@ -2,8 +2,8 @@ namespace RPG {
 
 enum ChunkTypeCode {
 	SAVE_INT = 0, //<! Saves an integer up to 4 bytes
-	SAVE_SHORT = 1, //<! A smaller integer whose size is sizeBytes and value stored directly in object.
-	SAVE_ARRAY = 2, //<! An array of data, where sizeBytes indicates the size of the whole array and object points to the data
+	SAVE_ARRAY = 1, //<! An array of data, where sizeBytes indicates the size of the whole array and object points to the data
+	SAVE_ARRAY_INDIRECT = 2, //<! An array of data, where sizeBytes indicates the size of the whole array and object points to a pointer to the data
 	SAVE_STRING = 3, //<! A string, where object points to the DString
 	SAVE_CATALOG = 4, //<! A catalog, where we call it's virtual function and recurse
 	SAVE_STRUCT = 5, //<! An RPG_Object, where we call it's virtual function and recurse

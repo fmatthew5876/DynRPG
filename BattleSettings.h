@@ -15,6 +15,11 @@ namespace RPG {
 		RE_DEATH_GAME_OVER,
 		RE_DEATH_CALL_COMMON_EVENT
 	};
+
+	class BattleSettings;
+
+	struct BattleSettingsVTable: ObjectVTable {
+	};
 	
 	/*! \brief Used for battle settings (layout, etc.)
 		\sa RPG::battleSettings
@@ -25,10 +30,10 @@ namespace RPG {
 	*/
 	class BattleSettings {
 		public:
-			void **vTable;
+			BattleSettingsVTable *vTable;
 			int characterPlacement; //!< Manual (0) or Automatic (1)?
 			BattleLayout_T layout; //!< Battle layout
-				int _unknown_C;
+			int unusedDisplayNormalParameters; //!< Unused value in Editor
 			// Documented as WindowSize	(0|1 = large|small) (dword), which suggests the opposite...
 			bool largeWindows; //!< Are the "large windows" active?
 				bool _unknown_11;

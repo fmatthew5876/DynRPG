@@ -127,7 +127,7 @@ namespace RPG {
 				//int _unknown_B4;
 			DStringPtr system2GraphicFilename; //!< Default filename of the system2 graphic
 			DStringPtr frameGraphicFilename; //!< Default filename of the frame graphic
-			bool useFrame; //!< Use a frame?
+			int useFrame; //!< Use a frame?
 				bool _unknown_B9;
 				bool _unknown_BA;
 				bool _unknown_BB;

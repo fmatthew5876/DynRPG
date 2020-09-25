@@ -19,7 +19,7 @@ namespace RPG {
 				int _unknown_24;
 				int _unknown_28;
 				int _unknown_2C;
-				int _unknown_30;
+			Object* _unknownObject;
 				int _unknown_34;
 				int _unknown_38;
 			bool fullScreen; //!< Is fullscreen active?

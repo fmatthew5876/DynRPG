@@ -63,7 +63,7 @@ namespace RPG {
 			DListPtr<char> *text; //!< The window's text (doesn't work yet)
 				int _unknown_68;
 			int fontSet;  //!< The window's font set?
-				int _unknown_70;
+			bool windowTransparent; //!< If the window body is transparent
 				int _unknown_74;
 
 			// Functions
@@ -357,10 +357,12 @@ namespace RPG {
 
 	class WindowBattleCommand : public Window {
 	    public:
+			int unknownCmdInt;
 	};
 
 	class WindowBattleParty : public Window {
 	    public:
+			bool unknownPartyBool;
 	};
 
 	class WindowBattleMonster: public Window {
