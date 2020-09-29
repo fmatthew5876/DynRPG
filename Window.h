@@ -60,7 +60,7 @@ namespace RPG {
 			int rollOn1;
 			int rollOn2; //!< When non-zero allows foreground events to display next message without waiting for message box to close.
 			int winTimer; //!< The total number of frames the window has been visible before a RPG::Scene change
-			DListPtr<char> *text; //!< The window's text (doesn't work yet)
+			Image *text; //!< The window's text (doesn't work yet)
 				int _unknown_68;
 			int fontSet;  //!< The window's font set?
 			bool windowTransparent; //!< If the window body is transparent
@@ -245,7 +245,7 @@ namespace RPG {
 		public:
 			int heroId; //!< Database ID of the hero selected
 			WindowHelp* winHelp; //!< alternate window, used for different purposes by different screens.
-			Window *winInfo; //!< The sub-window for the item description
+			int numItems; //!< Total number of items in the window
 	};
 
 	/*! \brief Used for skill menu from the main menu.
@@ -374,10 +374,7 @@ namespace RPG {
 
 	class WindowBattleAction: public Window {
 	    public:
-			DStringPtr unknownText0;
-			DStringPtr unknownText1;
-			DStringPtr unknownText2;
-			DStringPtr unknownText3;
+			DStringPtr windowText[4];
 	};
 
 	class WindowDebugLeft: public Window {

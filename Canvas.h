@@ -1,11 +1,19 @@
 namespace RPG {
+	class Canvas;
+	struct CanvasVTable {
+		int (*_unknown_v0)(Canvas*);
+		int (*_unknown_v1)(Canvas*);
+		int (*_unknown_v2)(Canvas*);
+		int (*_unknown_v3)(Canvas*);
+		int (*_unknown_v4)(Canvas*);
+	};
 	/*! \brief %Image buffer with 16 bit color depth, used as canvas for multiple 8-bit images
 		\sa RPG::Screen::canvas
 		\sa RPG::Image
 	*/
 	class Canvas {
 		public:
-			void **vTable;
+			CanvasVTable *vTable;
 			DBitmap *bitmap; //!< Underlying 16-bit bitmap
 			/*! \brief Number of bytes you have to add to a pixel address to
 				get the address of the pixel in the same column of the next

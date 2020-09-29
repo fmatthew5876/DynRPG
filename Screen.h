@@ -24,6 +24,7 @@ namespace RPG {
 				int _unknown_38;
 			bool fullScreen; //!< Is fullscreen active?
 			bool largeWindow; //!< Is the large window (640x480) active?
+			bool afterLargeWindow;
 			Canvas *canvas; //!< RPG::Canvas which should be used for drawing on the screen
 			RECT canvasRect;
 				int _unknown_54;
@@ -56,7 +57,7 @@ namespace RPG {
 			bool wasScreenSaver;
 				bool _unknown_B3; // stub. needed?
 				int _unknown_B4;
-				int _unknown_B8; 
+			void* mainLoopCallback;  // Callback which is called each frame to run the game logic?
 				int _unknown_BC; 
 			double millisecondsPerFrame; //!< Milliseconds a frame should take
 			int maxFPS; //!< Maximum FPS
