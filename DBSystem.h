@@ -128,13 +128,7 @@ namespace RPG {
 			DStringPtr system2GraphicFilename; //!< Default filename of the system2 graphic
 			DStringPtr frameGraphicFilename; //!< Default filename of the frame graphic
 			int useFrame; //!< Use a frame?
-				bool _unknown_B9;
-				bool _unknown_BA;
-				bool _unknown_BB;
 			bool reverseBattleAnims; //!< Reverse Battle Animations when attacked from Behind
-				bool _unknown_BD;
-				bool _unknown_BE;
-				bool _unknown_BF;
 			ItemUsability itemUsability; //!< Whether hero id or class id dictates item usability.
 			int battleTestFormation; //!< Formation used for battle test
 			int battleTestCondition; //!< Formation used for battle test
