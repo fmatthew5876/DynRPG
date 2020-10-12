@@ -7,12 +7,23 @@ namespace RPG {
 	class Monster : public Battler { // TLcfgMonsterItem
 		public:
 			// sizeof(Battler) == 0xD8
-#if RPG_RT_ENGINE == 2000
-			int _unknown_0xDB;
-#endif
 			int databaseId; //!< The database ID of the monster
+#if RPG_RT_ENGINE == 2000
+			int _unknown_i0;
+			int _unknown_i1;
+#endif
 			Image *image; //!< The image of the monster's graphic
+#if RPG_RT_ENGINE == 2003
 			Image *imageMirrored; //!< The <b>mirrored</b> image of the monster's graphic (used when \ref RPG::Battler::mirrored is \c true)
+#endif
+#if RPG_RT_ENGINE == 2000
+			int flashR;
+			int flashG;
+			int flashB;
+			int flashUnknown;
+			double flashIntensity;
+			int flashTimer;
+#endif
 			/*! \brief Frames left until damage blinking is done
 
 				If a monster takes damage, it blinks a few time. The blinking

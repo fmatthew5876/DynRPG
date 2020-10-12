@@ -70,10 +70,12 @@ namespace RPG {
 			int id; //!< ID of the animation
 			DStringPtr name; //!< The name of the animation
 			DStringPtr filename; //!< The filename of the animation's graphic
+#if RPG_RT_ENGINE == 2003
 			bool isLargeAnimation; //!< Does the animation use a large animation file?
 				bool _unknown_11;
 				bool _unknown_12;
 				bool _unknown_13;
+#endif
 			CatalogPtr<AnimationEffect *> effects; //!< Pointer to the RPG::AnimationEffect array
 			AnimationScope_T scope; //!< The scope of the animation (See RPG::AnimationScope)
 			AnimationYAxisLine_T yLine; //!< The location of the y-axis (See RPG::AnimationYAxisLine)

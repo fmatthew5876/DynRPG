@@ -1,10 +1,12 @@
 namespace RPG {
+	struct MapVTable : ObjectVTable {};
+
 	/*! \brief Used for accessing and manipulating the current map environment
 		\sa RPG::map
 	*/
 	class Map {
 		public:
-			void **vTable;
+			MapVTable *vTable;
 			int cameraSubX; //!< X position of the camera <b>in units of 1/16th of a pixel</b>
 			int cameraSubY; //!< Y position of the camera <b>in units of 1/16th of a pixel</b>
 			int encounterRateNew; //!< If the encounter rate is changed by event command, it's stored here

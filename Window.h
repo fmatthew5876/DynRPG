@@ -9,7 +9,9 @@ namespace RPG {
 		void (*_unknown_v4)(Window*);
 		void (*UpdateChoicesInput)(Window*);
 		void (*_unknown_v6)(Window*);
+#if RPG_RT_ENGINE == 2003
 		void (*_unknown_v7)(Window*);
+#endif
 		void (*Create)(Window*);
 		void (*BlitChoices)(Window*); //!< Redraws the choices text and cursor
 		void (*Reset)(Window*);
@@ -60,11 +62,13 @@ namespace RPG {
 			int rollOn1;
 			int rollOn2; //!< When non-zero allows foreground events to display next message without waiting for message box to close.
 			int winTimer; //!< The total number of frames the window has been visible before a RPG::Scene change
+#if RPG_RT_ENGINE == 2003
 			Image *text; //!< The window's text (doesn't work yet)
 				int _unknown_68;
 			int fontSet;  //!< The window's font set?
 			bool windowTransparent; //!< If the window body is transparent
 				int _unknown_74;
+#endif
 
 			// Functions
 			Window(); //!< Experimental

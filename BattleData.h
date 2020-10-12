@@ -74,7 +74,11 @@ namespace RPG {
 				bool _unknown_23;
 			WindowBattleParty *winParty; //!< The RPG::Window object of the party
 			Window *winFightEscape; //!< The RPG::Window object for fight/escape/autobattle
+#if RPG_RT_ENGINE == 2000
+			Window *winCommand; //!< The RPG::Window object for commands
+#else
 			WindowBattleCommand *winCommand; //!< The RPG::Window object for commands
+#endif
 			WindowMenuSkill *winSkill; //!< The RPG::Window object for skills
 			WindowMenuItem *winItem; //!< The RPG::Window object for items
 			WindowBattleParty *winPartyTarget; //!< The RPG::Window object for targetting party members

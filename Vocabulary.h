@@ -160,7 +160,6 @@ std::string victoryMessage = RPG::vocabulary[3]
 		VocabularyVTable* vTable;
 #if RPG_RT_ENGINE == 2000
 		RPG::DStringPtr battleMonsterAppear;
-		RPG::DStringPtr battleStart;
 #endif
 		RPG::DStringPtr battleInitiative;
 #if RPG_RT_ENGINE == 2000

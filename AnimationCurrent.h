@@ -27,7 +27,9 @@ namespace RPG {
 			AnimationFlashEffect* targetFlashEffects; //<! For each frame, says what the target flash effect should be.
 			AnimationFlashEffect* screenFlashEffects; //<! For each frame, says what the screen flash effect should be.
 			AnimationShakeEffect* shakeEffects; //<! For each frame, says what the shake effect scope should be.
+#if RPG_RT_ENGINE == 2003
 			bool isMirrored; //!< Is the animation currently mirrored?
+#endif
 
 	};
 

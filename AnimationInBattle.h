@@ -27,12 +27,12 @@ namespace RPG {
 
 	class AnimationInBattleData {
 		public:
-			bool isAnimationPlaying; //!< Is a battle animation playing?
+			int _unknown_10;
 			AnimationCurrent *currentAnim; //!< The battle animation's data
 			int currentAnimationId; //!< The ID of the battle animation currently playing
 			AnimationTargetParty currentAnimTarget; //!< The target of the battle animation currently playing (See RPG::AnimationTargetMonster)
 			int currentAnimationFrame; //!< Current animation frame playing
-			int _unknown_last01;
+			bool isAnimationPlaying; //!< Is a battle animation playing?
 	};
 
 	class AnimationInBattle {

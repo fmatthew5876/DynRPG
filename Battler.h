@@ -49,44 +49,6 @@ namespace RPG {
 	class Battler;
 
 	struct BattlerVTable : IdObjectVTable {
-#if RPG_RT_ENGINE == 2000
-		int (*GetBaseAtk)(Battler*);
-		int (*GetBaseDef)(Battler*);
-		int (*GetBaseInt)(Battler*);
-		int (*GetBaseAgi)(Battler*);
-		void (*_unknown_v4)(Battler*);
-		void (*_unknown_v5)(Battler*);
-		void (*_unknown_v6)(Battler*);
-		void (*_unknown_v7)(Battler*);
-		void (*_unknown_v8)(Battler*);
-		void (*GetBattlerName)(Battler*);
-		int (*GetMaxHp)(Battler*);
-		int (*GetMaxMp)(Battler*);
-		void (*_unknown_v12)(Battler*);
-		void (*_unknown_v13)(Battler*);
-		void (*_unknown_v14)(Battler*);
-		void (*_unknown_v15)(Battler*);
-		void (*_unknown_v16)(Battler*);
-		void (*_unknown_v17)(Battler*);
-		void (*AttackHasAttribute)(Battler*, int);
-		void (*_unknown_v19)(Battler*);
-		void (*_unknown_v20)(Battler*);
-		double (*GetCriticalHitRate)(Battler*);
-		int (*GetHitRate)(Battler*);
-		int (*HasStrongDefense)(Battler*);
-		void (*_unknown_v24)(Battler*);
-		int (*AttacksTwice)(Battler*);
-		void (*_unknown_v26)(Battler*);
-		int (*HasAttacksIgnoresEvasion)(Battler*);
-		int (*IgnoresCriticalHits)(Battler*);
-		int (*HasPhysicalEvasionUp)(Battler*);
-		int (*_unknown_v30)(Battler*);
-		int (*_unknown_v31)(Battler*);
-		int (*PreventsTerrainDamage)(Battler*);
-		int (*IsInSameParty)(Battler*, Battler*); //<! Used to check if target of attack is in same party and if so, disallow critical hits.
-		int (*GetCriticalHitMessageType)(Battler*); //<! 0 - Monster, 1 - Actor
-		int (*GetHurtType)(Battler*);
-#else
 		int (*Create)(Battler*); //!< Constructor
 		void (*GetBattlerName)(Battler*, RPG_DString*);
 		int (*GetMaxHp)(Battler*);
@@ -95,7 +57,9 @@ namespace RPG {
 		int (*GetBaseDef)(Battler*);
 		int (*GetBaseInt)(Battler*);
 		int (*GetBaseAgi)(Battler*);
+#if RPG_RT_ENGINE == 2003
 		int (*GetBaseAgiForUsedWeapon)(Battler*); //!< Evasion for actor weapon attack uses this instead of other AGI function
+#endif
 		int (*GetAttributeResist)(Battler*, int);
 		int (*GetConditionResist)(Battler*, int);
 		int (*AttackHasAttribute)(Battler*, int);
@@ -119,7 +83,6 @@ namespace RPG {
 		int (*IsItemUsable)(Battler*, int);
 		int (*IsSkillUsable)(Battler*, int);
 		int (*SelectAutoBattleAction)(Battler*); //<! Runs the auto battle algorithm and chooses an action
-#endif
 	};
 
 	/*! \brief Used for entities participating in battle, i.e. actors and
@@ -181,6 +144,9 @@ if(battler->animationId == 9) battler->animationId = 0;
 			DArray<short, 1,0> conditions;
 			int battle_order_2k; // Computed from AGI and used in 2k battle to determine the order which battlers go.
 			bool isCharging; //!< Is the battler (monster) currently using the "Charge Up" action
+#if RPG_RT_ENGINE == 2000
+			int _unknown_0xDB;
+#endif
 #if RPG_RT_ENGINE == 2003
 			/*! \brief Current value of the ATB bar (\c 0 to \c 300000 - see details)
 
