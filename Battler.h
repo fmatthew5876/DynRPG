@@ -30,7 +30,7 @@ namespace RPG {
 		AMS_PRIMARY_WEAPON = 1,
 		AMS_SECONDARY_WEAPON = 2,
 		AMS_UKNOWN_03 = 3, // Attack?
-		AMS_UNKOWN_04 = 4, // Walk left?
+		AMS_RETURN_TO_ORIGIN2_RUN_LEFT = 4, // Only used after skill finishes and only for step or jump forward?
 		AMS_SKILL = 5,
 		AMS_ITEM = 6,
 		AMS_DEAD = 7,
@@ -39,9 +39,9 @@ namespace RPG {
 		AMS_DEFEND = 10,
 		AMS_UNKNOWN_11 = 11, // Idle?
 		AMS_WALK_TO_TARGET = 12, // When preparing to take action - walk left anim
-		AMS_RETURN_TO_ORIGIN = 13, // When finished action - walk back
+		AMS_RETURN_TO_ORIGIN_RUN_RIGHT = 13, // When finished action - walk back
 		AMS_VICTORY = 14,
-		AMS_UNKNOWN_15 = 15, // Idle?
+		AMS_PENDING_RESET = 15, // After completing item, damage, etc.. animation. This state causes the next update loop to recheck conditions and defend.
 		AMS_ESCAPING = 16,
 		AMS_UNKNNOWN_17 = 17,
 	};
