@@ -25,7 +25,7 @@ namespace RPG {
 			}
 
 			//! \cond
-			int dummy;
+			void** VTable;
 			//! \endcond
 			
 			/*! \brief Gets the name of a variable

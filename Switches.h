@@ -25,7 +25,7 @@ namespace RPG {
 			}
 			
 			//! \cond
-			bool dummy;
+			void** VTable;
 			//! \endcond
 			
 			/*! \brief Gets the name of a switch

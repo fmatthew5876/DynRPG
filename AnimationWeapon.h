@@ -39,8 +39,8 @@ namespace RPG {
 				int _unknown_0C;
 			AnimationBattlerPose battlerPose; //!< pose # of the hero. Default is 3. (See RPG::AnimationBattlerPose)
 			PoseAnimationType isBattleAnim; //!< Weapon animation or Battle animation?
+			int weaponAnimId; //!< Weapon animation ID
 			int battleAnimId; //!< Battle animation ID
-				int _unknown_1C;
 			AnimationMoveBeforeAttack movement; //!< Movement before attack (See RPG::AnimationMoveBeforeAttack)
 			bool addAfterImage; //!< "Add" the after image?
 			WeaponNumberOfAttacks numAttacks; //!< Number of attacks (See RPG::WeaponNumberOfAttacks)

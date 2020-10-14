@@ -9,8 +9,8 @@ namespace RPG {
 			// sizeof(Battler) == 0xD8
 			int databaseId; //!< The database ID of the monster
 #if RPG_RT_ENGINE == 2000
-			int _unknown_i0;
-			int _unknown_i1;
+			int x; //!< X position on battle screen
+			int y; //!< Y position on battle screen
 #endif
 			Image *image; //!< The image of the monster's graphic
 #if RPG_RT_ENGINE == 2003

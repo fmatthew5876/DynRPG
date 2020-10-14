@@ -125,6 +125,7 @@ namespace RPG {
 			int battleCommands[7]; //!< Default battle commands (\c 0 and \c -1 both mean "no command at this position")
 			int xPosInBattle; //!< Set in the battle layout tab if using "Manual" placement mode
 			int yPosInBattle; //!< Set in the battle layout tab if using "Manual" placement mode
+			int unknownLastItem;
 	};
 
 	/*! \ingroup game_objects
