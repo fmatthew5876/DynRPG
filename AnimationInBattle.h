@@ -27,12 +27,18 @@ namespace RPG {
 
 	class AnimationInBattleData {
 		public:
+#if RPG_RT_ENGINE == 2000
 			int _unknown_10;
+#else
+			bool isAnimationPlaying; //!< Is a battle animation playing?
+#endif
 			AnimationCurrent *currentAnim; //!< The battle animation's data
 			int currentAnimationId; //!< The ID of the battle animation currently playing
 			AnimationTargetParty currentAnimTarget; //!< The target of the battle animation currently playing (See RPG::AnimationTargetMonster)
 			int currentAnimationFrame; //!< Current animation frame playing
+#if RPG_RT_ENGINE == 2000
 			bool isAnimationPlaying; //!< Is a battle animation playing?
+#endif
 	};
 
 	class AnimationInBattle {

@@ -367,6 +367,7 @@ namespace RPG {
 	class WindowBattleParty : public Window {
 	    public:
 			bool unknownPartyBool;
+			int selectedActor;
 	};
 
 	class WindowBattleMonster: public Window {
