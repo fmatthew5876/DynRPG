@@ -71,6 +71,7 @@ namespace RPG {
 #include "Title.h"
 #include "Input.h" // Updated
 #include "Picture.h"
+#include "TestPlayer.h"
 #include "DBSystem.h" // Updated
 #include "System.h"
 #include "ScreenEffect.h"

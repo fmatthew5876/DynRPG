@@ -121,10 +121,10 @@ namespace RPG {
 			bool autoBattle; //!< is autoBattle enabled?
 				bool _unknown_AB; // Used by RPS Patch
 			BattleType battleType; //!< Is this a random encounter or did it start via event?
-			char currentTargetRange; // More research
+			char currentTargetRange; //!< The range of the current action being performed. If it's not targeting a monster, then the branch which checks for enemy target is skipped. 
 				bool _unknown_B1; // Used by RPS Patch
 				bool _unknown_B2; // Used by RPS Patch
-			int currentActingBattlerId; //!< Currently acting battler
+			int currentEnemyTargetIndex; //!< Current enemy target index - used by event branches
 			int currentActingHeroDbId; //!< Database ID of the currently acting hero, -1 = enemy
 				int _unknown_BC;
 			bool continueBattle; // More research

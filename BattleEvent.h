@@ -46,7 +46,7 @@ namespace RPG {
 			bool key_input_left_2k3;
 			bool key_input_right_2k3;
 			bool key_input_up_2k3;
-			char _unknown_2B; // unused?
+			//char _unknown_2B; // unused?
 #endif // RPG_RT_ENGINE == 2003
 			bool eventPageDone[100]; //!< Determines whether a particular battle event page has finished executing
 	};

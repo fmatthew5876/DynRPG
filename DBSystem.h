@@ -37,11 +37,7 @@ namespace RPG {
 	};
 	//! One-byte version of RPG::Transition
 	typedef unsigned char Transition_T;
-	
-	//! \cond
-	typedef void TestPlayer;
-	//! \endcond
-	
+
 	//! Possible values for RPG::DBSystem::menuCommand
 	enum MenuCommand {
 		MENU_CMD_NONE,
@@ -117,7 +113,7 @@ namespace RPG {
 			int selectedHero; //!< Selected hero in the editor.
 			DStringPtr battleTestBackground;
 			//! \cond
-			TestPlayer *testPlayer;
+			CatalogPtr<TestPlayer*> testPlayer;
 			//! \endcond
 			int databaseSaveCount; //!< Number of times the database was saved in edtior.
 			int ldbVersion; //!< LDB database version. 2000 or 2003.
